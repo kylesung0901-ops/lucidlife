@@ -13,10 +13,10 @@ export function Footer() {
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.8 }}
-      className="bg-[#0D1421] text-white py-16 px-6 border-t border-[#C9A66B]/20"
+      className="bg-[#0D1421] text-white py-12 md:py-16 px-4 sm:px-6 lg:px-8 border-t border-[#C9A66B]/20"
     >
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 mb-8 md:mb-12">
           {/* Company Info */}
           <div>
             <motion.div

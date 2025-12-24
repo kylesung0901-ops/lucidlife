@@ -26,38 +26,38 @@ export function StoriesSection() {
   ];
   
   return (
-    <section id="stories" ref={ref} className="py-24 px-6 bg-[#0D1421]">
+    <section id="stories" ref={ref} className="py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-[#0D1421]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-light text-[#F5F1E6] mb-4" style={{ fontFamily: 'Pretendard, sans-serif' }}>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-[#F5F1E6] mb-3 md:mb-4" style={{ fontFamily: 'Pretendard, sans-serif' }}>
             이별 이야기
           </h2>
         </motion.div>
         
-        <div className="max-w-2xl mx-auto space-y-6">
+        <div className="max-w-2xl mx-auto space-y-4 md:space-y-6">
           {stories.map((story, index) => (
             <motion.div
               key={story.title}
               initial={{ opacity: 0, x: -50 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="flex items-start gap-4 p-6 bg-[#1A2538] rounded-2xl border border-[#C9A66B]/20 hover:border-[#C9A66B]/40 transition-all duration-300"
+              className="flex items-start gap-3 md:gap-4 p-4 md:p-6 bg-[#1A2538] rounded-2xl border border-[#C9A66B]/20 hover:border-[#C9A66B]/40 transition-all duration-300"
             >
               <div className="flex-shrink-0 mt-1">
-                <div className="w-6 h-6 bg-[#C9A66B] rounded-full flex items-center justify-center">
-                  <span className="text-[#0D1421] text-sm">✓</span>
+                <div className="w-5 h-5 md:w-6 md:h-6 bg-[#C9A66B] rounded-full flex items-center justify-center">
+                  <span className="text-[#0D1421] text-xs md:text-sm">✓</span>
                 </div>
               </div>
-              <div>
-                <h3 className="text-lg font-semibold text-[#F5F1E6] mb-2" style={{ fontFamily: 'Pretendard, sans-serif' }}>
+              <div className="flex-1">
+                <h3 className="text-base md:text-lg font-semibold text-[#F5F1E6] mb-1 md:mb-2" style={{ fontFamily: 'Pretendard, sans-serif' }}>
                   {story.title}
                 </h3>
-                <p className="text-[#C9A66B]/80 leading-relaxed font-light" style={{ fontFamily: 'Pretendard, sans-serif' }}>
+                <p className="text-sm md:text-base text-[#C9A66B]/80 leading-relaxed font-light" style={{ fontFamily: 'Pretendard, sans-serif' }}>
                   {story.description}
                 </p>
               </div>
@@ -69,12 +69,13 @@ export function StoriesSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center mt-12"
+          className="text-center mt-8 md:mt-12"
         >
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="border-2 border-[#C9A66B] text-[#C9A66B] px-8 py-3 rounded-full hover:bg-[#C9A66B] hover:text-[#0D1421] transition-all"
+            className="border-2 border-[#C9A66B] text-[#C9A66B] px-6 md:px-8 py-2 md:py-3 rounded-full hover:bg-[#C9A66B] hover:text-[#0D1421] transition-all text-sm md:text-base"
+            style={{ fontFamily: 'Pretendard, sans-serif' }}
           >
             더 많은 이야기 보기
           </motion.button>

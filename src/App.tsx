@@ -15,7 +15,7 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 export default function App() {
   return (
     <LanguageProvider>
-      <div className="min-h-screen">
+      <div className="min-h-screen bg-[#0D1421]">
         <Header />
         <Hero />
         <TogetherSection />

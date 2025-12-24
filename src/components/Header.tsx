@@ -22,27 +22,26 @@ export function Header() {
       transition={{ duration: 0.8 }}
       className="fixed top-0 left-0 right-0 z-50 bg-[#0D1421]/95 backdrop-blur-md border-b border-[#C9A66B]/20"
     >
-      <div className="max-w-7xl mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
+        <div className="flex items-center justify-between gap-2 sm:gap-4">
           {/* 좌측 - 루시드라이프 로고 */}
           <motion.a
-            href="#"
+            href="#hero"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
             whileHover={{ scale: 1.02 }}
-            className="flex items-center"
+            className="flex items-center flex-shrink-0"
           >
             <img 
               src="/lucidlife-logo.png" 
               alt="LucidLife 루시드라이프" 
-              className="h-14 sm:h-16 md:h-20 w-auto object-contain"
-              style={{ minHeight: '56px', maxHeight: '80px' }}
+              className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto object-contain"
             />
           </motion.a>
 
           {/* 우측 - 액션 버튼들 */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3 flex-wrap justify-end">
             {/* 1. 24시간장례상담 */}
             <motion.a
               href="tel:010-2116-4114"
@@ -51,10 +50,11 @@ export function Header() {
               transition={{ duration: 0.5, delay: 0.1 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="hidden md:flex items-center gap-2 bg-[#C9A66B] text-[#141C2E] px-4 py-2 rounded-full hover:opacity-90 transition-all text-sm font-light"
+              className="hidden lg:flex items-center gap-1.5 md:gap-2 bg-[#C9A66B] text-[#141C2E] px-2 md:px-3 lg:px-4 py-1.5 md:py-2 rounded-full hover:opacity-90 transition-all text-xs md:text-sm font-light whitespace-nowrap"
             >
-              <Phone size={16} />
-              24시간장례상담
+              <Phone size={14} className="md:w-4 md:h-4 flex-shrink-0" />
+              <span className="hidden xl:inline">24시간장례상담</span>
+              <span className="xl:hidden">24시간</span>
             </motion.a>
 
             {/* 2. 긴급상담 전화번호 */}
@@ -62,7 +62,7 @@ export function Header() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="hidden lg:block text-[#C9A66B] text-sm font-light"
+              className="hidden xl:block text-[#C9A66B] text-xs md:text-sm font-light whitespace-nowrap"
             >
               긴급상담 010-2116-4114
             </motion.div>
@@ -75,14 +75,16 @@ export function Header() {
               transition={{ duration: 0.5, delay: 0.3 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 bg-[#FEE500] text-[#3C1E1E] px-3 py-2 rounded-full hover:bg-[#FFEB3B] transition-colors text-sm"
+              className="flex items-center gap-1.5 bg-[#FEE500] text-[#3C1E1E] px-2 md:px-3 py-1.5 md:py-2 rounded-full hover:bg-[#FFEB3B] transition-colors text-xs md:text-sm whitespace-nowrap"
             >
-              <MessageCircle size={16} />
+              <MessageCircle size={14} className="md:w-4 md:h-4" />
               <span className="hidden sm:inline">카톡연결</span>
             </motion.a>
 
             {/* 4. EN/KR */}
-            <LanguageToggle />
+            <div className="flex-shrink-0">
+              <LanguageToggle />
+            </div>
 
             {/* 5. 루시드 함께하기 */}
             <motion.button
@@ -91,7 +93,7 @@ export function Header() {
               transition={{ duration: 0.5, delay: 0.4 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#C9A66B] text-[#141C2E] px-4 py-2 rounded-full hover:opacity-90 transition-all text-sm font-light"
+              className="hidden md:block bg-[#C9A66B] text-[#141C2E] px-3 md:px-4 py-1.5 md:py-2 rounded-full hover:opacity-90 transition-all text-xs md:text-sm font-light whitespace-nowrap"
             >
               루시드 함께하기
             </motion.button>
@@ -104,9 +106,9 @@ export function Header() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 text-[#F5F1E6] hover:text-[#C9A66B] transition-colors"
+              className="p-1.5 md:p-2 text-[#F5F1E6] hover:text-[#C9A66B] transition-colors flex-shrink-0"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={20} className="md:w-6 md:h-6" /> : <Menu size={20} className="md:w-6 md:h-6" />}
             </motion.button>
           </div>
         </div>

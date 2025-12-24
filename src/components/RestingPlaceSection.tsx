@@ -31,23 +31,23 @@ export function RestingPlaceSection() {
   ];
   
   return (
-    <section id="space" ref={ref} className="py-24 px-6 bg-[#141C2E]">
+    <section id="space" ref={ref} className="py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-[#141C2E]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-light text-[#F5F1E6] mb-4" style={{ fontFamily: 'Pretendard, sans-serif' }}>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-[#F5F1E6] mb-3 md:mb-4" style={{ fontFamily: 'Pretendard, sans-serif' }}>
             마지막 안식처
           </h2>
-          <p className="text-lg text-[#C9A66B] font-light" style={{ fontFamily: 'Pretendard, sans-serif' }}>
+          <p className="text-base md:text-lg text-[#C9A66B] font-light" style={{ fontFamily: 'Pretendard, sans-serif' }}>
             안치까지의 선택을 책임집니다
           </p>
         </motion.div>
         
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {places.map((place, index) => (
             <motion.div
               key={place.title}
@@ -56,19 +56,20 @@ export function RestingPlaceSection() {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               className="bg-[#1A2538] rounded-2xl overflow-hidden border border-[#C9A66B]/20 hover:border-[#C9A66B]/40 transition-all duration-300"
             >
-              <div className="relative h-64">
+              <div className="relative h-48 sm:h-56 md:h-64">
                 <img 
                   src={place.image} 
                   alt={place.title}
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0D1421]/80 to-transparent" />
               </div>
-              <div className="p-8">
-                <h3 className="text-xl font-semibold text-[#F5F1E6] mb-3" style={{ fontFamily: 'Pretendard, sans-serif' }}>
+              <div className="p-6 md:p-8">
+                <h3 className="text-lg md:text-xl font-semibold text-[#F5F1E6] mb-2 md:mb-3" style={{ fontFamily: 'Pretendard, sans-serif' }}>
                   {place.title}
                 </h3>
-                <p className="text-[#C9A66B]/80 leading-relaxed font-light" style={{ fontFamily: 'Pretendard, sans-serif' }}>
+                <p className="text-sm md:text-base text-[#C9A66B]/80 leading-relaxed font-light" style={{ fontFamily: 'Pretendard, sans-serif' }}>
                   {place.description}
                 </p>
               </div>

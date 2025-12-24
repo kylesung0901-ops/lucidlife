@@ -41,7 +41,7 @@ export function Testimonials() {
   ];
   
   return (
-    <section id="ceo" ref={ref} className="py-24 px-6 bg-[#141C2E] relative overflow-hidden">
+    <section id="ceo" ref={ref} className="py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-[#141C2E] relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-10 right-10 w-64 h-64 bg-[#C9A66B]/5 rounded-full blur-3xl" />
       <div className="absolute bottom-10 left-10 w-80 h-80 bg-[#1A2538]/30 rounded-full blur-3xl" />
