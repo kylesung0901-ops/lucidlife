@@ -2,8 +2,10 @@ import { motion } from "motion/react";
 import { useInView } from "motion/react";
 import { useRef, useState } from "react";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export function Contact() {
+  const { t } = useLanguage();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [formData, setFormData] = useState({
@@ -48,11 +50,11 @@ export function Contact() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-[#D4AF37] tracking-wider uppercase mb-4 block"
           >
-            Get In Touch
+            {t('contact.badge')}
           </motion.span>
-          <h2 className="text-[#0A2E5C] mb-4">We're Here for You</h2>
+          <h2 className="text-[#0A2E5C] mb-4">{t('contact.title')}</h2>
           <p className="text-[#666666]">
-            Available 24/7 to support you through every step
+            {t('contact.description')}
           </p>
         </motion.div>
         
@@ -65,9 +67,9 @@ export function Contact() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-[#0A2E5C] mb-6">Reach Out Anytime</h3>
+              <h3 className="text-[#0A2E5C] mb-6">{t('contact.reach')}</h3>
               <p className="text-[#666666] mb-8">
-                Our compassionate team is available around the clock to assist you with immediate needs or to answer any questions about our services.
+                {t('contact.available')}
               </p>
             </div>
             
@@ -83,7 +85,7 @@ export function Contact() {
                   <Phone className="text-white" size={20} />
                 </div>
                 <div>
-                  <p className="text-[#2F2F2F] mb-1">24/7 Helpline</p>
+                  <p className="text-[#2F2F2F] mb-1">{t('contact.phone')}</p>
                   <p className="text-[#666666]">+91 98765 43210</p>
                   <p className="text-[#666666]">+91 98765 43211</p>
                 </div>
@@ -100,7 +102,7 @@ export function Contact() {
                   <Mail className="text-white" size={20} />
                 </div>
                 <div>
-                  <p className="text-[#2F2F2F] mb-1">Email</p>
+                  <p className="text-[#2F2F2F] mb-1">{t('contact.email')}</p>
                   <p className="text-[#666666]">care@thelaststring.com</p>
                 </div>
               </motion.div>
@@ -116,7 +118,7 @@ export function Contact() {
                   <MapPin className="text-white" size={20} />
                 </div>
                 <div>
-                  <p className="text-[#2F2F2F] mb-1">Location</p>
+                  <p className="text-[#2F2F2F] mb-1">{t('contact.location')}</p>
                   <p className="text-[#666666]">Mumbai, Maharashtra, India</p>
                 </div>
               </motion.div>
@@ -133,7 +135,7 @@ export function Contact() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-[#2F2F2F] mb-2">
-                  Full Name *
+                  {t('contact.form.name')}
                 </label>
                 <input
                   type="text"
@@ -148,7 +150,7 @@ export function Contact() {
               
               <div>
                 <label htmlFor="email" className="block text-[#2F2F2F] mb-2">
-                  Email Address *
+                  {t('contact.form.email')}
                 </label>
                 <input
                   type="email"
@@ -163,7 +165,7 @@ export function Contact() {
               
               <div>
                 <label htmlFor="phone" className="block text-[#2F2F2F] mb-2">
-                  Phone Number *
+                  {t('contact.form.phone')}
                 </label>
                 <input
                   type="tel"
@@ -178,7 +180,7 @@ export function Contact() {
               
               <div>
                 <label htmlFor="message" className="block text-[#2F2F2F] mb-2">
-                  Message
+                  {t('contact.form.message')}
                 </label>
                 <textarea
                   id="message"
@@ -196,7 +198,7 @@ export function Contact() {
                 whileTap={{ scale: 0.98 }}
                 className="w-full bg-gradient-to-r from-[#D4AF37] to-[#e0bf4d] text-white py-4 rounded-full inline-flex items-center justify-center gap-2 hover:shadow-xl transition-shadow"
               >
-                Send Message
+                {t('contact.form.send')}
                 <Send size={20} />
               </motion.button>
             </form>

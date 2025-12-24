@@ -1,6 +1,8 @@
 import { motion } from "motion/react";
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
+import { LanguageToggle } from "./LanguageToggle";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,12 +17,14 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   
+  const { t } = useLanguage();
+  
   const navItems = [
-    { label: "About", href: "#about" },
-    { label: "Services", href: "#services" },
-    { label: "Holistic Care", href: "#holistic" },
-    { label: "Testimonials", href: "#testimonials" },
-    { label: "Contact", href: "#contact" }
+    { label: t('nav.about'), href: "#about" },
+    { label: t('nav.services'), href: "#services" },
+    { label: t('nav.holistic'), href: "#holistic" },
+    { label: t('nav.testimonials'), href: "#testimonials" },
+    { label: t('nav.contact'), href: "#contact" }
   ];
   
   return (
@@ -50,7 +54,7 @@ export function Header() {
           </motion.a>
           
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6">
             {navItems.map((item, index) => (
               <motion.a
                 key={item.href}
@@ -69,6 +73,9 @@ export function Header() {
               </motion.a>
             ))}
             
+            {/* Language Toggle */}
+            <LanguageToggle />
+            
             <motion.a
               href="tel:+919876543210"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -79,7 +86,7 @@ export function Header() {
               className="bg-[#D4AF37] text-[#0A2E5C] px-6 py-3 rounded-full flex items-center gap-2 hover:bg-[#e0bf4d] transition-colors"
             >
               <Phone size={18} />
-              24/7 Support
+              {t('nav.support')}
             </motion.a>
           </nav>
           
@@ -119,12 +126,17 @@ export function Header() {
                 </a>
               ))}
               
+              {/* Mobile Language Toggle */}
+              <div className="flex justify-center mb-4">
+                <LanguageToggle />
+              </div>
+              
               <a
                 href="tel:+919876543210"
                 className="bg-[#D4AF37] text-[#0A2E5C] px-6 py-3 rounded-full flex items-center justify-center gap-2 hover:bg-[#e0bf4d] transition-colors"
               >
                 <Phone size={18} />
-                24/7 Support
+                {t('nav.support')}
               </a>
             </div>
           </motion.nav>

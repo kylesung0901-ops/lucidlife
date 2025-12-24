@@ -6,18 +6,21 @@ import { HolisticServices } from "./components/HolisticServices";
 import { Testimonials } from "./components/Testimonials";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import { LanguageProvider } from "./contexts/LanguageContext";
 
 export default function App() {
   return (
-    <div className="min-h-screen">
-      <Header />
-      <Hero />
-      <About />
-      <Services />
-      <HolisticServices />
-      <Testimonials />
-      <Contact />
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="min-h-screen">
+        <Header />
+        <Hero />
+        <About />
+        <Services />
+        <HolisticServices />
+        <Testimonials />
+        <Contact />
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }

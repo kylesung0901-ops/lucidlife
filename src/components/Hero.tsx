@@ -1,7 +1,10 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export function Hero() {
+  const { t } = useLanguage();
+  
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Gradient Background */}
@@ -61,7 +64,7 @@ export function Hero() {
           </motion.div>
           
           <h1 className="text-white mb-4">
-            Celebrating Life, Honoring Afterlife
+            {t('hero.title')}
           </h1>
         </motion.div>
         
@@ -71,7 +74,7 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
           className="text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed"
         >
-          Thoughtfully Curated Funeral & Memorial Services
+          {t('hero.subtitle')}
         </motion.p>
         
         <motion.div
@@ -85,7 +88,7 @@ export function Hero() {
             whileTap={{ scale: 0.95 }}
             className="bg-[#D4AF37] text-[#0A2E5C] px-8 py-4 rounded-full inline-flex items-center gap-2 transition-all hover:bg-[#e0bf4d] hover:shadow-2xl"
           >
-            Get Immediate Assistance
+            {t('hero.cta.immediate')}
             <ArrowRight size={20} />
           </motion.button>
           
@@ -95,7 +98,7 @@ export function Hero() {
             whileTap={{ scale: 0.95 }}
             className="border-2 border-white/80 text-white px-8 py-4 rounded-full inline-flex items-center gap-2 transition-all hover:bg-white/10 hover:border-white"
           >
-            Explore Services
+            {t('hero.cta.explore')}
           </motion.a>
         </motion.div>
       </div>
