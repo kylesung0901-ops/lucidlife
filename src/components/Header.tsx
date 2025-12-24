@@ -40,18 +40,14 @@ export function Header() {
           <motion.a
             href="#"
             whileHover={{ scale: 1.05 }}
-            className="flex flex-col"
+            className="flex items-center"
           >
-            <span className={`font-serif transition-colors ${
-              isScrolled ? "text-[#0A2E5C]" : "text-white"
-            }`} style={{ fontSize: "1.5rem", fontWeight: 700 }}>
-              The Last String
-            </span>
-            <span className={`text-xs tracking-wider transition-colors ${
-              isScrolled ? "text-[#D4AF37]" : "text-[#D4AF37]"
-            }`}>
-              Celebrating Life, Honoring Afterlife
-            </span>
+            <img 
+              src="/lucidlife-logo.png" 
+              alt="LucidLife Logo" 
+              className="h-16 sm:h-20 md:h-24 w-auto object-contain"
+              style={{ minHeight: '64px', maxHeight: '96px' }}
+            />
           </motion.a>
           
           {/* Desktop Navigation */}
