@@ -1,5 +1,6 @@
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
+import { ContactInfoBar } from "./components/ContactInfoBar";
 import { TogetherSection } from "./components/TogetherSection";
 import { ThreeDaysSection } from "./components/ThreeDaysSection";
 import { RestingPlaceSection } from "./components/RestingPlaceSection";
@@ -15,9 +16,10 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 export default function App() {
   return (
     <LanguageProvider>
-      <div className="min-h-screen bg-[#0D1421]">
+      <div className="wrapper">
         <Header />
         <Hero />
+        <ContactInfoBar />
         <TogetherSection />
         <ThreeDaysSection />
         <RestingPlaceSection />
