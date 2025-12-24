@@ -48,7 +48,7 @@ export function ContinuumCareSection() {
           </p>
         </motion.div>
         
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-12">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-12 justify-items-center">
           {timeline.map((item, index) => (
             <motion.div
               key={item.phase}
@@ -57,7 +57,7 @@ export function ContinuumCareSection() {
               transition={{ duration: 0.8, delay: index * 0.2 }}
               className="bg-[#1A2538] rounded-2xl overflow-hidden border border-[#C9A66B]/20 hover:border-[#C9A66B]/40 transition-all duration-300"
             >
-              <div className="relative h-40 sm:h-48">
+              <div className="relative w-full aspect-square">
                 <img 
                   src={item.image} 
                   alt={item.phase}
@@ -77,7 +77,7 @@ export function ContinuumCareSection() {
                 </div>
               </div>
               
-              <div className="p-4 md:p-6">
+              <div className="p-4 md:p-6 text-center">
                 <p className="text-sm md:text-base text-[#F5F1E6]/80 leading-relaxed font-light" style={{ fontFamily: 'Pretendard, sans-serif' }}>
                   {item.title}
                 </p>

@@ -47,7 +47,7 @@ export function RestingPlaceSection() {
           </p>
         </motion.div>
         
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 justify-items-center">
           {places.map((place, index) => (
             <motion.div
               key={place.title}
@@ -56,7 +56,7 @@ export function RestingPlaceSection() {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               className="bg-[#1A2538] rounded-2xl overflow-hidden border border-[#C9A66B]/20 hover:border-[#C9A66B]/40 transition-all duration-300"
             >
-              <div className="relative h-48 sm:h-56 md:h-64">
+              <div className="relative w-full aspect-square">
                 <img 
                   src={place.image} 
                   alt={place.title}
@@ -65,7 +65,7 @@ export function RestingPlaceSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0D1421]/80 to-transparent" />
               </div>
-              <div className="p-6 md:p-8">
+              <div className="p-6 md:p-8 text-center">
                 <h3 className="text-lg md:text-xl font-semibold text-[#F5F1E6] mb-2 md:mb-3" style={{ fontFamily: 'Pretendard, sans-serif' }}>
                   {place.title}
                 </h3>

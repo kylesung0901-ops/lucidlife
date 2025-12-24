@@ -100,4 +100,14 @@
   button {
     font-family: 'Pretendard', 'Lato', sans-serif;
   }
+
+  /* Center alignment for all sections */
+  section {
+    text-align: center;
+  }
+
+  /* Ensure images maintain square aspect ratio */
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
 }
