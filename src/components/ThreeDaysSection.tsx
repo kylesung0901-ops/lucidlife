@@ -51,7 +51,7 @@ export function ThreeDaysSection() {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               className="bg-[#1A2538] rounded-2xl overflow-hidden border border-[#C9A66B]/20 hover:border-[#C9A66B]/40 transition-all duration-300"
             >
-              <div className="relative w-full aspect-square">
+              <div className="relative aspect-square">
                 <img 
                   src={day.image} 
                   alt={day.title}
@@ -65,7 +65,7 @@ export function ThreeDaysSection() {
                   </span>
                 </div>
               </div>
-              <div className="p-6 md:p-8 text-center">
+              <div className="p-6 md:p-8">
                 <h3 className="text-lg md:text-xl font-semibold text-[#F5F1E6] mb-2 md:mb-3" style={{ fontFamily: 'Pretendard, sans-serif' }}>
                   {day.title}
                 </h3>

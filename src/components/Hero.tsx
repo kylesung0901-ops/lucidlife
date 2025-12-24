@@ -16,9 +16,9 @@ export function Hero() {
             />
           </div>
           <div className="container">
-            <div className="row align-items-center justify-content-center">
-              <div className="col-sm-12 col-md-12 col-lg-10 col-xl-8">
-                <div className="slide__content text-center">
+            <div className="row align-items-center">
+              <div className="col-sm-12 col-md-12 col-lg-12 col-xl-7">
+                <div className="slide__content">
                   <h2 className="slide__title">모든 이별은 서툴기에<br />누군가는 그 곁에 선다</h2>
                   <p className="slide__desc">
                     말하지 않아도 되는 시간을 함께 견딥니다. 서툰 이별 앞에, 함께 서 있는 곳입니다.

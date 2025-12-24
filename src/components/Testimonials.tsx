@@ -71,18 +71,18 @@ export function Testimonials() {
           </p>
         </motion.div>
         
-        <div className="grid md:grid-cols-2 gap-12 items-start justify-items-center">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Profile Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative w-full max-w-md"
+            className="relative"
           >
             <div className="bg-[#1A2538] rounded-2xl border border-[#C9A66B]/20 p-8 relative overflow-hidden">
-              <div className="w-48 h-48 mx-auto mb-6 rounded-2xl overflow-hidden border-2 border-[#C9A66B]/30">
+              <div className="w-48 h-48 mx-auto mb-6 rounded-2xl overflow-hidden border-2 border-[#C9A66B]/30 aspect-square">
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=crop&w=400&h=400"
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"
                   alt="도원 대표"
                   className="w-full h-full object-cover"
                 />
@@ -113,7 +113,7 @@ export function Testimonials() {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="space-y-8 w-full max-w-md"
+            className="space-y-8"
           >
             {/* Experience */}
             <div className="bg-[#1A2538] rounded-2xl border border-[#C9A66B]/20 p-6">

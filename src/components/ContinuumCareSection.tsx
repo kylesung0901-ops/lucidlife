@@ -57,7 +57,7 @@ export function ContinuumCareSection() {
               transition={{ duration: 0.8, delay: index * 0.2 }}
               className="bg-[#1A2538] rounded-2xl overflow-hidden border border-[#C9A66B]/20 hover:border-[#C9A66B]/40 transition-all duration-300"
             >
-              <div className="relative w-full aspect-square">
+              <div className="relative aspect-square">
                 <img 
                   src={item.image} 
                   alt={item.phase}
@@ -77,7 +77,7 @@ export function ContinuumCareSection() {
                 </div>
               </div>
               
-              <div className="p-4 md:p-6 text-center">
+              <div className="p-4 md:p-6">
                 <p className="text-sm md:text-base text-[#F5F1E6]/80 leading-relaxed font-light" style={{ fontFamily: 'Pretendard, sans-serif' }}>
                   {item.title}
                 </p>
