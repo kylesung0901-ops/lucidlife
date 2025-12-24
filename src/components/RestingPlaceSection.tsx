@@ -9,37 +9,29 @@ export function RestingPlaceSection() {
   
   const places = [
     {
-      title: "자연 안식처",
-      description: "푸른 자연 속에서 영원한 평안을 누리는 곳",
-      icon: TreePine,
-      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
-      features: ["자연장", "수목장", "산림형 납골당"]
+      title: "봉안당",
+      description: "따뜻한 빛이 머무는, 가장 편안한 실내 안치 공간.",
+      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600"
     },
     {
-      title: "전통 봉안당",
-      description: "전통적인 방식으로 정성스럽게 모시는 공간",
-      icon: Building,
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
-      features: ["실내 봉안당", "가족 봉안실", "추모 공간"]
+      title: "자연장",
+      description: "자연에서 와서 자연으로. 수목장, 잔디장, 해양장.",
+      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600"
     },
     {
-      title: "바다 전망",
-      description: "넓은 바다를 바라보며 영원한 휴식을 취하는 곳",
-      icon: Waves,
-      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
-      features: ["해안가 납골당", "바다 조망", "산책로"]
+      title: "매장",
+      description: "전통의 예를 갖춘, 품격 있는 장지 동행.",
+      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600"
     },
     {
-      title: "도심 접근성",
-      description: "가족들이 쉽게 찾아뵐 수 있는 도심 속 안식처",
-      icon: Mountain,
-      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
-      features: ["도심 납골당", "교통 편의", "주차 시설"]
+      title: "개장·이장",
+      description: "오래된 묘소를 새로운 안식처로.",
+      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600"
     }
   ];
   
   return (
-    <section id="restingplace" ref={ref} className="py-24 px-6 bg-[#FAFAFA]">
+    <section id="space" ref={ref} className="py-24 px-6 bg-[#FAFAFA]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -47,9 +39,12 @@ export function RestingPlaceSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-light text-[#2C2C2C] mb-4">
+          <h2 className="text-3xl md:text-4xl font-light text-[#141C2E] mb-4" style={{ fontFamily: 'Pretendard, sans-serif' }}>
             마지막 안식처
           </h2>
+          <p className="text-lg text-[#C9A66B] font-light" style={{ fontFamily: 'Pretendard, sans-serif' }}>
+            안치까지의 선택을 책임집니다
+          </p>
         </motion.div>
         
         <div className="grid md:grid-cols-2 gap-8">
@@ -68,29 +63,14 @@ export function RestingPlaceSection() {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-6 left-6">
-                  <div className="w-12 h-12 bg-[#D4AF37] rounded-full flex items-center justify-center mb-3">
-                    <place.icon className="text-white" size={24} />
-                  </div>
-                </div>
               </div>
               <div className="p-8">
-                <h3 className="text-xl font-semibold text-[#2C2C2C] mb-3">
+                <h3 className="text-xl font-semibold text-[#141C2E] mb-3" style={{ fontFamily: 'Pretendard, sans-serif' }}>
                   {place.title}
                 </h3>
-                <p className="text-[#8B7355] leading-relaxed mb-4">
+                <p className="text-[#C9A66B] leading-relaxed font-light" style={{ fontFamily: 'Pretendard, sans-serif' }}>
                   {place.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
-                  {place.features.map((feature, idx) => (
-                    <span 
-                      key={idx}
-                      className="bg-[#D4AF37]/10 text-[#8B7355] px-3 py-1 rounded-full text-sm"
-                    >
-                      {feature}
-                    </span>
-                  ))}
-                </div>
               </div>
             </motion.div>
           ))}

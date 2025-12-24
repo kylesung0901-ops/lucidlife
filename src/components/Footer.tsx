@@ -69,11 +69,20 @@ export function Footer() {
             >
               <h4 className="text-lg font-semibold mb-4 text-[#D4AF37]">사업자 정보</h4>
               <div className="space-y-2 text-sm text-white/70">
-                <p>상호명: 루시드라이프</p>
-                <p>대표자: 서동원</p>
-                <p>사업자등록번호: 123-92-47792</p>
-                <p>사업장소재지: 경기도 파주시 교하로 100, 908-102</p>
-                <p>개인정보보호책임자: 서동원</p>
+                <p>상호명: 루시드라이프 | 대표자: 도원</p>
+                <p>사업자등록번호: 000-00-00000</p>
+                <p>주소: 서울특별시 강남구 테헤란로 000, 00층</p>
+              </div>
+              
+              <div className="mt-6">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-[#C9A66B] text-[#141C2E] px-6 py-3 rounded-full hover:opacity-90 transition-all font-light"
+                  style={{ fontFamily: 'Pretendard, sans-serif' }}
+                >
+                  멤버십 무료 가입
+                </motion.button>
               </div>
             </motion.div>
           </div>
@@ -87,7 +96,7 @@ export function Footer() {
           className="border-t border-white/20 pt-8 text-center"
         >
           <p className="text-white/60 text-sm">
-            © 2024 LucidLife. All rights reserved. | 개인정보처리방침 | 이용약관
+            Copyright © 2025 Lucid Life. All rights reserved.
           </p>
         </motion.div>
       </div>

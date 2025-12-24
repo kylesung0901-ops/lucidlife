@@ -1,157 +1,144 @@
 import { motion } from "motion/react";
-import { useState, useEffect } from "react";
-import { Menu, X, Phone } from "lucide-react";
-import { useLanguage } from "../contexts/LanguageContext";
+import { useState } from "react";
+import { Menu, X, Phone, MessageCircle } from "lucide-react";
 import { LanguageToggle } from "./LanguageToggle";
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-  
-  const { t } = useLanguage();
-  
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const navItems = [
-    { label: t('nav.lucidlife'), href: "#hero" },
-    { label: t('nav.together'), href: "#together" },
-    { label: t('nav.threedays'), href: "#threedays" },
-    { label: t('nav.restingplace'), href: "#restingplace" },
-    { label: t('nav.stories'), href: "#stories" },
-    { label: t('nav.withus'), href: "#withus" }
+    { label: "루시드라이프", href: "#hero" },
+    { label: "함께하는 방식", href: "#together" },
+    { label: "사흘동안", href: "#process" },
+    { label: "마지막 안식처", href: "#space" },
+    { label: "이별 이야기", href: "#stories" },
+    { label: "이별동행케어", href: "#continuum" }
   ];
-  
+
   return (
     <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? "bg-white shadow-lg py-4" 
-          : "bg-white/10 backdrop-blur-sm py-6"
-      }`}
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <motion.a
-            href="#"
-            whileHover={{ scale: 1.05 }}
+          {/* 좌측 - 루시드라이프 로고 */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            whileHover={{ scale: 1.02 }}
             className="flex items-center"
           >
-            <img 
-              src="/lucidlife-logo.png" 
-              alt="LucidLife Logo" 
-              className="h-16 sm:h-20 md:h-24 w-auto object-contain"
-            />
-          </motion.a>
-          
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6">
-            {navItems.map((item, index) => (
-              <motion.a
-                key={item.href}
-                href={item.href}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
-                className={`transition-colors ${
-                  isScrolled 
-                    ? "text-[#666666] hover:text-[#D4AF37]" 
-                    : "text-white hover:text-[#D4AF37]"
-                }`}
-              >
-                {item.label}
-              </motion.a>
-            ))}
-            
-            {/* Language Toggle */}
+            <h1 className="text-2xl font-bold text-[#141C2E]" style={{ fontFamily: 'Pretendard, sans-serif' }}>
+              루시드라이프
+            </h1>
+          </motion.div>
+
+          {/* 우측 - 액션 버튼들 */}
+          <div className="flex items-center gap-3">
+            {/* 1. 24시간장례상담 */}
+            <motion.a
+              href="tel:010-2116-4114"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="hidden md:flex items-center gap-2 bg-[#C9A66B] text-[#141C2E] px-4 py-2 rounded-full hover:opacity-90 transition-all text-sm font-light"
+            >
+              <Phone size={16} />
+              24시간장례상담
+            </motion.a>
+
+            {/* 2. 긴급상담 전화번호 */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="hidden lg:block text-[#141C2E] text-sm font-light"
+            >
+              긴급상담 010-2116-4114
+            </motion.div>
+
+            {/* 3. 카톡연결 */}
+            <motion.a
+              href="#"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-2 bg-[#FEE500] text-[#3C1E1E] px-3 py-2 rounded-full hover:bg-[#FFEB3B] transition-colors text-sm"
+            >
+              <MessageCircle size={16} />
+              <span className="hidden sm:inline">카톡연결</span>
+            </motion.a>
+
+            {/* 4. EN/KR */}
             <LanguageToggle />
-            
-            <div className="flex items-center gap-4">
-              <motion.a
-                href="tel:010-2116-4114"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-[#D4AF37] text-[#0A2E5C] px-4 py-2 rounded-full flex items-center gap-2 hover:bg-[#e0bf4d] transition-colors text-sm"
-              >
-                <Phone size={16} />
-                전화
-              </motion.a>
-              <motion.a
-                href="#"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-[#FEE500] text-[#3C1E1E] px-4 py-2 rounded-full flex items-center gap-2 hover:bg-[#FFEB3B] transition-colors text-sm"
-              >
-                💬 카톡
-              </motion.a>
-            </div>
-          </nav>
-          
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`lg:hidden p-2 transition-colors ${
-              isScrolled ? "text-[#0A2E5C]" : "text-white"
-            }`}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
+
+            {/* 5. 루시드 함께하기 */}
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-[#C9A66B] text-[#141C2E] px-4 py-2 rounded-full hover:opacity-90 transition-all text-sm font-light"
+            >
+              루시드 함께하기
+            </motion.button>
+
+            {/* 6. 햄버거 메뉴 */}
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 text-[#141C2E] hover:text-[#C9A66B] transition-colors"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </motion.button>
+          </div>
         </div>
-        
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
+
+        {/* 모바일 메뉴 */}
+        {isMenuOpen && (
           <motion.nav
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden pt-6 pb-4"
+            className="pt-6 pb-4"
           >
             <div className="flex flex-col gap-4">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`py-2 transition-colors ${
-                    isScrolled 
-                      ? "text-[#666666] hover:text-[#D4AF37]" 
-                      : "text-white hover:text-[#D4AF37]"
-                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="py-2 text-[#141C2E] hover:text-[#C9A66B] transition-colors"
                 >
                   {item.label}
                 </a>
               ))}
               
-              {/* Mobile Language Toggle */}
-              <div className="flex justify-center mb-4">
-                <LanguageToggle />
+              <div className="flex flex-col gap-3 mt-4">
+                <a
+                  href="tel:010-2116-4114"
+                  className="bg-[#C9A66B] text-[#141C2E] px-6 py-3 rounded-full flex items-center justify-center gap-2 hover:opacity-90 transition-all"
+                >
+                  <Phone size={18} />
+                  24시간장례상담
+                </a>
+                <button className="bg-[#C9A66B] text-[#141C2E] px-6 py-3 rounded-full hover:opacity-90 transition-all">
+                  루시드 함께하기
+                </button>
               </div>
-              
-              <a
-                href="tel:+919876543210"
-                className="bg-[#D4AF37] text-[#0A2E5C] px-6 py-3 rounded-full flex items-center justify-center gap-2 hover:bg-[#e0bf4d] transition-colors"
-              >
-                <Phone size={18} />
-                {t('nav.support')}
-              </a>
             </div>
           </motion.nav>
         )}

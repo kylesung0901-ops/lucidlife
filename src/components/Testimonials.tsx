@@ -53,16 +53,21 @@ export function Testimonials() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <motion.h2 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl md:text-4xl font-light text-[#2C2C2C] mb-4"
+            className="mb-8"
           >
-            {t('ceo.name')}
-          </motion.h2>
-          <p className="text-[#D4AF37] text-lg font-medium mb-2">
-            {t('ceo.title')}
+            <p className="text-2xl md:text-3xl text-[#141C2E] font-light italic mb-6" style={{ fontFamily: 'Pretendard, sans-serif' }}>
+              "이별은 끝이 아니라, 한 사람을 기억하는 시작입니다."
+            </p>
+          </motion.div>
+          <h2 className="text-xl font-medium text-[#141C2E] mb-2" style={{ fontFamily: 'Pretendard, sans-serif' }}>
+            도원
+          </h2>
+          <p className="text-[#C9A66B] font-light" style={{ fontFamily: 'Pretendard, sans-serif' }}>
+            루시드라이프 대표
           </p>
         </motion.div>
         

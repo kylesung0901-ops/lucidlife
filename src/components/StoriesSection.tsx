@@ -9,28 +9,19 @@ export function StoriesSection() {
   
   const stories = [
     {
-      title: "아버지의 마지막 선물",
-      excerpt: "90세 아버지가 남기신 마지막 메시지와 가족들의 특별한 추모 이야기",
-      author: "김○○ 가족",
-      date: "2024.12.15",
-      image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
-      link: "#"
+      title: "함께 견뎌낸 이야기들",
+      description: "한 사람의 마지막을 함께 지나온 기록",
+      isCompleted: true
     },
     {
-      title: "집에서 보낸 마지막 시간",
-      excerpt: "병원이 아닌 집에서 가족과 함께한 할머니의 평안한 마지막 순간들",
-      author: "박○○ 가족",
-      date: "2024.12.10",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
-      link: "#"
+      title: "서툰 작별을 위한 안내서",
+      description: "알아두면 흔들리지 않는 최소한의 문법",
+      isCompleted: true
     },
     {
-      title: "바다가 보이는 곳에서",
-      excerpt: "평생 바다를 사랑했던 어머니를 위한 특별한 추모식 이야기",
-      author: "이○○ 가족",
-      date: "2024.12.05",
-      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
-      link: "#"
+      title: "사유하는 이별의 농도",
+      description: "삶과 죽음 사이에서 길어 올린 생각들",
+      isCompleted: true
     }
   ];
   
@@ -43,56 +34,32 @@ export function StoriesSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-light text-[#2C2C2C] mb-4">
+          <h2 className="text-3xl md:text-4xl font-light text-[#141C2E] mb-4" style={{ fontFamily: 'Pretendard, sans-serif' }}>
             이별 이야기
           </h2>
-          <p className="text-[#8B7355] text-lg">
-            함께한 가족들의 소중한 이야기를 나눕니다
-          </p>
         </motion.div>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="max-w-2xl mx-auto space-y-6">
           {stories.map((story, index) => (
             <motion.div
               key={story.title}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              initial={{ opacity: 0, x: -50 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="bg-[#FAFAFA] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer"
-              onClick={() => window.open(story.link, '_blank')}
+              className="flex items-start gap-4 p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={story.image} 
-                  alt={story.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute top-4 right-4">
-                  <div className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <ExternalLink className="text-white" size={16} />
-                  </div>
+              <div className="flex-shrink-0 mt-1">
+                <div className="w-6 h-6 bg-[#C9A66B] rounded-full flex items-center justify-center">
+                  <span className="text-white text-sm">✓</span>
                 </div>
               </div>
-              
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-[#2C2C2C] mb-3 group-hover:text-[#D4AF37] transition-colors">
+              <div>
+                <h3 className="text-lg font-semibold text-[#141C2E] mb-2" style={{ fontFamily: 'Pretendard, sans-serif' }}>
                   {story.title}
                 </h3>
-                <p className="text-[#8B7355] leading-relaxed mb-4 text-sm">
-                  {story.excerpt}
+                <p className="text-[#C9A66B] leading-relaxed font-light" style={{ fontFamily: 'Pretendard, sans-serif' }}>
+                  {story.description}
                 </p>
-                
-                <div className="flex items-center justify-between text-xs text-[#999999]">
-                  <div className="flex items-center gap-1">
-                    <User size={12} />
-                    <span>{story.author}</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Calendar size={12} />
-                    <span>{story.date}</span>
-                  </div>
-                </div>
               </div>
             </motion.div>
           ))}
