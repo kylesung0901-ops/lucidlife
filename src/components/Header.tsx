@@ -16,50 +16,7 @@ export function Header() {
   ];
 
   return (
-    <>
-      {/* Header Topbar */}
-      <div className="header-topbar">
-        <div className="container-fluid">
-          <div className="row align-items-center">
-            <div className="col-12">
-              <div className="d-flex align-items-center justify-content-between">
-                <ul className="contact__list d-flex flex-wrap align-items-center list-unstyled mb-0">
-                  <li>
-                    <i className="icon-phone"></i>
-                    <a href="tel:010-2116-4114">긴급상담: 010-2116-4114</a>
-                  </li>
-                  <li>
-                    <i className="icon-location"></i>
-                    <a href="#contact">경기도 파주시 교하로 100, 908-102</a>
-                  </li>
-                  <li>
-                    <i className="icon-clock"></i>
-                    <a href="#contact">24시간 상담 가능</a>
-                  </li>
-                </ul>
-                <div className="d-flex align-items-center">
-                  <ul className="social-icons list-unstyled mb-0 mr-30">
-                    <li>
-                      <a href="#" aria-label="Facebook">
-                        <i className="fab fa-facebook-f"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" aria-label="Instagram">
-                        <i className="fab fa-instagram"></i>
-                      </a>
-                    </li>
-                  </ul>
-                  <LanguageToggle />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Navigation */}
-      <header className="header header-layout1">
+    <header className="header header-layout1">
         <nav className="navbar navbar-expand-lg sticky-navbar">
           <div className="container-fluid">
             <a className="navbar-brand" href="#hero">
@@ -116,6 +73,5 @@ export function Header() {
           </div>
         </nav>
       </header>
-    </>
   );
 }
