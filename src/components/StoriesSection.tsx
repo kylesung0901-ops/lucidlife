@@ -1,7 +1,6 @@
 import { motion } from "motion/react";
 import { useInView } from "motion/react";
 import { useRef } from "react";
-import { ExternalLink, Calendar, User } from "lucide-react";
 
 export function StoriesSection() {
   const ref = useRef(null);
@@ -9,76 +8,83 @@ export function StoriesSection() {
   
   const stories = [
     {
-      title: "함께 견뎌낸 이야기들",
-      description: "한 사람의 마지막을 함께 지나온 기록",
-      isCompleted: true
+      title: "전통의 재해석, 그 시작",
+      description: "고종황제 입관 의식을 현대에 복원하다",
+      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"
     },
     {
-      title: "서툰 작별을 위한 안내서",
-      description: "알아두면 흔들리지 않는 최소한의 문법",
-      isCompleted: true
+      title: "미국식 메모리얼의 실제",
+      description: "장례식장이 아닌, 추억의 공간에서",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"
     },
     {
-      title: "사유하는 이별의 농도",
-      description: "삶과 죽음 사이에서 길어 올린 생각들",
-      isCompleted: true
+      title: "이별 후의 동행",
+      description: "49일간의 심리 케어 이야기",
+      image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"
     }
   ];
   
   return (
-    <section id="stories" ref={ref} className="py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-[#0D1421]">
-      <div className="max-w-7xl mx-auto">
+    <section ref={ref} className="py-20 bg-white">
+      <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12 md:mb-16"
+          className="text-center mb-16"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-[#F5F1E6] mb-3 md:mb-4" style={{ fontFamily: 'Pretendard, sans-serif' }}>
+          <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">
             이별 이야기
           </h2>
+          <p className="text-gray-600">루시드라이프와 함께한 이별의 기록</p>
         </motion.div>
-        
-        <div className="max-w-2xl mx-auto space-y-4 md:space-y-6">
+
+        <div className="grid md:grid-cols-3 gap-8 mb-12 max-w-6xl mx-auto">
           {stories.map((story, index) => (
             <motion.div
               key={story.title}
-              initial={{ opacity: 0, x: -50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="flex items-start gap-3 md:gap-4 p-4 md:p-6 bg-[#1A2538] rounded-2xl border border-[#C9A66B]/20 hover:border-[#C9A66B]/40 transition-all duration-300"
+              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer"
             >
-              <div className="flex-shrink-0 mt-1">
-                <div className="w-5 h-5 md:w-6 md:h-6 bg-[#C9A66B] rounded-full flex items-center justify-center">
-                  <span className="text-[#0D1421] text-xs md:text-sm">✓</span>
-                </div>
+              <div className="aspect-video overflow-hidden">
+                <img 
+                  src={story.image} 
+                  alt={story.title}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
               </div>
-              <div className="flex-1">
-                <h3 className="text-base md:text-lg font-semibold text-[#F5F1E6] mb-1 md:mb-2" style={{ fontFamily: 'Pretendard, sans-serif' }}>
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   {story.title}
                 </h3>
-                <p className="text-sm md:text-base text-[#C9A66B]/80 leading-relaxed font-light" style={{ fontFamily: 'Pretendard, sans-serif' }}>
+                <p className="text-gray-600 text-sm leading-relaxed">
                   {story.description}
                 </p>
               </div>
             </motion.div>
           ))}
         </div>
-        
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center mt-8 md:mt-12"
+          className="text-center"
         >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="border-2 border-[#C9A66B] text-[#C9A66B] px-6 md:px-8 py-2 md:py-3 rounded-full hover:bg-[#C9A66B] hover:text-[#0D1421] transition-all text-sm md:text-base"
-            style={{ fontFamily: 'Pretendard, sans-serif' }}
+          <a
+            href="https://blog.naver.com/lucid-life"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors font-medium"
           >
-            더 많은 이야기 보기
-          </motion.button>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            블로그 방문하기
+          </a>
         </motion.div>
       </div>
     </section>

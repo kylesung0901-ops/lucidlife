@@ -1,78 +1,74 @@
 import { motion } from "motion/react";
 import { useInView } from "motion/react";
 import { useRef } from "react";
-import { Calendar, Clock, Heart, Home } from "lucide-react";
 
 export function ThreeDaysSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   
-  const days = [
+  const process = [
     {
-      day: "1일차",
-      title: "임종 및 빈소 마련",
-      description: "황망한 첫날, 복잡한 절차 대신 고인과의 인사에 집중",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600"
+      day: "1",
+      title: "첫째 날",
+      subtitle: "임종과 준비",
+      description: "24시간 긴급 출동 염습과 입관 장례 계획 수립"
     },
     {
-      day: "2일차",
-      title: "입관 및 조문",
-      description: "가장 아름다운 마지막 모습을 기억할 수 있도록, 최고의 예를 갖춘 입관식",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600"
+      day: "2", 
+      title: "둘째 날",
+      subtitle: "추모와 의식",
+      description: "조문 공간 운영 심리 상담 지원 추모 영상 상영"
     },
     {
-      day: "3일차",
-      title: "발인 및 장지 동행",
-      description: "마지막 안식처까지, 소홀함 없이 끝까지 동행",
-      image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600"
+      day: "3",
+      title: "셋째 날", 
+      subtitle: "발인과 안치",
+      description: "발인 의식 장지 이동 안치 후 정리"
+    },
+    {
+      day: "4",
+      title: "그 이후",
+      subtitle: "이별 후 동행", 
+      description: "49재 안내 심리 케어 일상 복귀 지원"
     }
   ];
   
   return (
-    <section id="process" ref={ref} className="py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-[#0D1421]">
-      <div className="max-w-7xl mx-auto">
+    <section ref={ref} className="py-20 bg-white">
+      <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-light text-[#F5F1E6] mb-4" style={{ fontFamily: 'Pretendard, sans-serif' }}>
+          <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">
             사흘동안
           </h2>
+          <p className="text-gray-600">장례의 3일, 한 챕터씩 함께 걷습니다</p>
         </motion.div>
-        
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 justify-items-center">
-          {days.map((day, index) => (
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          {process.map((step, index) => (
             <motion.div
-              key={day.day}
+              key={step.day}
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="bg-[#1A2538] rounded-2xl overflow-hidden border border-[#C9A66B]/20 hover:border-[#C9A66B]/40 transition-all duration-300"
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              className="text-center"
             >
-              <div className="relative aspect-square">
-                <img 
-                  src={day.image} 
-                  alt={day.title}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0D1421]/80 to-transparent" />
-                <div className="absolute top-6 left-6">
-                  <span className="bg-[#C9A66B] text-[#0D1421] px-3 py-1 rounded-full text-sm font-light">
-                    {day.day}
-                  </span>
+              <div className="mb-6">
+                <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                  {step.day}
+                </div>
+                <div className="mb-2">
+                  <h3 className="text-lg font-semibold text-gray-900">{step.title}</h3>
+                  <p className="text-gray-600 text-sm">{step.subtitle}</p>
                 </div>
               </div>
-              <div className="p-6 md:p-8">
-                <h3 className="text-lg md:text-xl font-semibold text-[#F5F1E6] mb-2 md:mb-3" style={{ fontFamily: 'Pretendard, sans-serif' }}>
-                  {day.title}
-                </h3>
-                <p className="text-sm md:text-base text-[#C9A66B]/80 leading-relaxed font-light" style={{ fontFamily: 'Pretendard, sans-serif' }}>
-                  {day.description}
-                </p>
-              </div>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                {step.description}
+              </p>
             </motion.div>
           ))}
         </div>

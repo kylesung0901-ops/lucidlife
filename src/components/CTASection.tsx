@@ -1,54 +1,54 @@
 import { motion } from "motion/react";
 import { useInView } from "motion/react";
 import { useRef } from "react";
-import { useLanguage } from "../contexts/LanguageContext";
 
 export function CTASection() {
-  const { t } = useLanguage();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   
   return (
-    <section id="withus" ref={ref} className="py-24 px-6 bg-gradient-to-br from-[#F8F6F0] to-[#FFFFFF] relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-20 w-96 h-96 bg-[#D4AF37] rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-[#8B7355] rounded-full blur-3xl" />
-      </div>
-      
-      <div className="max-w-4xl mx-auto text-center relative z-10">
+    <section ref={ref} className="py-20 bg-white">
+      <div className="container mx-auto px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8 }}
-          className="mb-12"
+          className="max-w-3xl mx-auto"
         >
-          <h2 className="text-4xl md:text-5xl font-light text-[#2C2C2C] mb-8">
-            {t('cta.title')}
+          <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-6">
+            루시드와 함께.
           </h2>
-          <p className="text-xl text-[#8B7355] leading-relaxed mb-8">
-            서툰 이별 앞에서, 혼자가 아님을 느끼실 수 있도록<br />
-            루시드라이프가 함께하겠습니다.
+          <p className="text-gray-600 text-lg mb-12 leading-relaxed">
+            이별 앞에서, 혼자가 아닙니다. 지금 사전등록하시면 특별한 혜택을 드립니다.
           </p>
-        </motion.div>
-        
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => window.open('https://forms.google.com/your-form-id', '_blank')}
-            className="bg-[#D4AF37] text-white px-12 py-4 rounded-full text-lg font-medium hover:bg-[#C5A028] transition-all shadow-lg hover:shadow-xl"
-          >
-            {t('cta.button')}
-          </motion.button>
-          
-          <p className="text-sm text-[#999999] mt-4">
-            사전등록을 통해 필요한 순간 빠른 도움을 받으실 수 있습니다
-          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 font-medium text-lg"
+            >
+              사전등록
+            </motion.button>
+
+            <motion.a
+              href="tel:010-2116-4114"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-2 border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300 font-medium text-lg"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              긴급 상담
+            </motion.a>
+          </div>
         </motion.div>
       </div>
     </section>

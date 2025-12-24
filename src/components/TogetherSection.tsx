@@ -6,87 +6,123 @@ export function TogetherSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   
-  const approaches = [
+  const services = [
     {
       title: "가족장 · 무빈소",
+      price: "150",
+      unit: "만원~",
       feature: "조용히, 가족만",
-      description: "조용히, 가장 가까운 사람들만 남아 이별에 집중하는 시간.",
-      icon: "icon-heart"
+      specs: [
+        { label: "관", value: "일반관" },
+        { label: "상복", value: "총 5벌" },
+        { label: "의전", value: "—" }
+      ]
     },
     {
       title: "실용장",
+      price: "290",
+      unit: "만원~",
       feature: "기본에 충실하게",
-      description: "불필요한 부담은 덜고, 장례의 기본은 놓치지 않은 현실적인 선택.",
-      icon: "icon-medicine"
+      specs: [
+        { label: "관", value: "일반관" },
+        { label: "상복", value: "각 5벌" },
+        { label: "의전", value: "4명" }
+      ]
     },
     {
       title: "표준장",
+      price: "360",
+      unit: "만원~",
       feature: "충분히, 정성껏",
-      description: "가장 많은 이들이 선택한, 균형과 품위를 갖춘 기본 장례.",
-      icon: "icon-heart2"
+      specs: [
+        { label: "관", value: "일반관" },
+        { label: "상복", value: "각 7벌" },
+        { label: "의전", value: "6명" }
+      ]
     },
     {
       title: "매장 · 미국식장",
+      price: "450",
+      unit: "만원~",
       feature: "마지막을 완벽하게",
-      description: "한 사람의 삶을 중심에 두고 설계하는 맞춤형 추모 의식.",
-      icon: "icon-blood-test"
+      specs: [
+        { label: "관", value: "고급관" },
+        { label: "상복", value: "각 9벌" },
+        { label: "의전", value: "8명" }
+      ]
     }
   ];
   
   return (
-    <section id="together" ref={ref} className="services-layout1 services-carousel">
-      <div className="bg-img">
-        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920" alt="background" />
-      </div>
-      <div className="container">
-        <div className="row">
-          <div className="col-sm-12 col-md-12 col-lg-6 offset-lg-3">
-            <div className="heading text-center mb-60">
-              <h2 className="heading__subtitle">부담 없이, 상황에 맞게</h2>
-              <h3 className="heading__title">함께하는 방식</h3>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-12">
-            <div className="slick-carousel"
-              data-slick='{"slidesToShow": 3, "slidesToScroll": 1, "autoplay": true, "arrows": false, "dots": true, "responsive": [ {"breakpoint": 992, "settings": {"slidesToShow": 2}}, {"breakpoint": 767, "settings": {"slidesToShow": 1}}, {"breakpoint": 480, "settings": {"slidesToShow": 1}}]}'>
-              {approaches.map((approach, index) => (
-                <div key={approach.title} className="service-item">
-                  <div className="service__icon">
-                    <i className={approach.icon}></i>
-                    <i className={approach.icon}></i>
-                  </div>
-                  <div className="service__content">
-                    <h4 className="service__title">{approach.title}</h4>
-                    <p className="service__desc">{approach.description}</p>
-                    <ul className="list-items list-items-layout1 list-unstyled">
-                      <li>{approach.feature}</li>
-                    </ul>
-                    <a href="#contact" className="btn btn__secondary btn__outlined btn__rounded">
-                      <span>자세히 보기</span>
-                      <i className="icon-arrow-right"></i>
-                    </a>
-                  </div>
+    <section ref={ref} className="py-20 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <p className="text-sm text-gray-500 mb-2 tracking-wider uppercase">LUCIDLIFE SERVICE</p>
+          <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">
+            함께 하는 방식
+          </h2>
+          <p className="text-gray-600">부담 없이, 상황에 맞게.</p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {services.map((service, index) => (
+            <motion.div
+              key={service.title}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer"
+            >
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                {service.title}
+              </h3>
+              
+              <div className="mb-4">
+                <div className="flex items-baseline gap-1">
+                  <span className="text-2xl font-bold text-blue-600">{service.price}</span>
+                  <span className="text-sm text-gray-500">{service.unit}</span>
                 </div>
-              ))}
-            </div>
-          </div>
+              </div>
+
+              <p className="text-blue-600 text-sm mb-6 font-medium">
+                "{service.feature}"
+              </p>
+
+              <div className="space-y-3 mb-6">
+                {service.specs.map((spec, specIndex) => (
+                  <div key={specIndex} className="flex justify-between text-sm">
+                    <span className="text-gray-500">{spec.label}</span>
+                    <span className="text-gray-900 font-medium">{spec.value}</span>
+                  </div>
+                ))}
+              </div>
+
+              <button className="w-full bg-gray-100 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-200 transition-colors text-sm">
+                자세히 보기
+              </button>
+            </motion.div>
+          ))}
         </div>
-        <div className="row">
-          <div className="col-12 text-center mt-30">
-            <a href="#contact" className="btn btn__primary btn__rounded">
-              <span>전체 상품 비교하기</span>
-              <i className="icon-arrow-right"></i>
-            </a>
-            <div className="mt-20">
-              <a href="#" className="btn btn__secondary btn__link btn__rounded">
-                <span>미국식 장례 알아보기</span>
-                <i className="icon-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="text-center"
+        >
+          <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium inline-flex items-center gap-2">
+            전체 상품 비교하기
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+        </motion.div>
       </div>
     </section>
   );
