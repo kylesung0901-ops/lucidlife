@@ -63,19 +63,20 @@ export function Hero() {
             <span className="text-[#D4AF37] tracking-widest uppercase">Since 2010</span>
           </motion.div>
           
-          <h1 className="text-white mb-4">
+          <h1 className="text-white mb-6">
             {t('hero.title')}
           </h1>
         </motion.div>
         
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-          className="text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed"
+          className="text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed space-y-2"
         >
-          {t('hero.subtitle')}
-        </motion.p>
+          <p className="text-lg">{t('hero.subtitle1')}</p>
+          <p className="text-lg font-medium">{t('hero.subtitle2')}</p>
+        </motion.div>
         
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -2,16 +2,33 @@ import { motion } from "motion/react";
 import { useInView } from "motion/react";
 import { useRef } from "react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { Award, Heart, Users } from "lucide-react";
+import { Clock, Users, Heart } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export function About() {
+  const { t } = useLanguage();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   
-  const stats = [
-    { icon: Users, value: "5000+", label: "Families Served" },
-    { icon: Award, value: "15+", label: "Years of Service" },
-    { icon: Heart, value: "100%", label: "Satisfaction Rate" }
+  const phases = [
+    { 
+      icon: Clock, 
+      title: t('about.phase1.title'), 
+      desc: t('about.phase1.desc'),
+      color: "from-blue-500 to-blue-600"
+    },
+    { 
+      icon: Users, 
+      title: t('about.phase2.title'), 
+      desc: t('about.phase2.desc'),
+      color: "from-amber-500 to-amber-600"
+    },
+    { 
+      icon: Heart, 
+      title: t('about.phase3.title'), 
+      desc: t('about.phase3.desc'),
+      color: "from-green-500 to-green-600"
+    }
   ];
   
   return (
@@ -33,24 +50,9 @@ export function About() {
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <span className="text-[#D4AF37] tracking-wider uppercase mb-4 block">About Us</span>
-              <h2 className="text-[#0A2E5C] mb-6">Compassion in Every Detail</h2>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <p className="mb-4">
-                At The Last String, we understand that saying goodbye to a loved one is one of life's most profound moments. Our mission is to provide compassionate, dignified, and personalized funeral and memorial services that honor the unique life and legacy of those who have passed.
-              </p>
-              <p className="mb-4">
-                Based in Mumbai, we bring together tradition, empathy, and professionalism to support families during their most difficult times. Every detail is handled with care, allowing you to focus on celebrating the life of your loved one.
-              </p>
-              <p>
-                We believe in the celebration of life after loss, ensuring that every service reflects the dignity, grace, and respect that every individual deserves.
-              </p>
+              <span className="text-[#D4AF37] tracking-wider uppercase mb-4 block">{t('about.badge')}</span>
+              <h2 className="text-[#0A2E5C] mb-4 text-3xl font-bold">{t('about.title')}</h2>
+              <h3 className="text-[#666666] mb-8 text-xl">{t('about.subtitle')}</h3>
             </motion.div>
           </div>
           
@@ -62,48 +64,57 @@ export function About() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <ImageWithFallback 
-                src="https://images.unsplash.com/photo-1761234852163-23f2ededd04e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBjYXJpbmclMjBoYW5kc3xlbnwxfHx8fDE3NjM4MDM2OTh8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Compassionate care"
+                src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21wYXNzaW9uYXRlJTIwY2FyZXxlbnwxfHx8fDE3NjM4MDM2OTh8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                alt="이별동행케어"
                 className="w-full h-auto"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A2E5C]/60 via-transparent to-transparent" />
               
-              {/* Floating Card */}
+              {/* Process Flow */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
                 className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-xl"
               >
-                <p className="text-[#0A2E5C] italic">
-                  "Honoring memories with dignity and grace"
-                </p>
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-blue-600 font-medium">임종 전</span>
+                  <div className="flex-1 h-0.5 bg-gradient-to-r from-blue-500 via-amber-500 to-green-500 mx-2"></div>
+                  <span className="text-amber-600 font-medium">장례 중</span>
+                  <div className="flex-1 h-0.5 bg-gradient-to-r from-amber-500 to-green-500 mx-2"></div>
+                  <span className="text-green-600 font-medium">이별 이후</span>
+                </div>
               </motion.div>
             </div>
           </motion.div>
         </motion.div>
         
-        {/* Stats */}
+        {/* Three Phases */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
-          {stats.map((stat, index) => (
+          {phases.map((phase, index) => (
             <motion.div
-              key={stat.label}
+              key={phase.title}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
               whileHover={{ scale: 1.05 }}
-              className="bg-white rounded-xl p-6 shadow-lg text-center border-t-4 border-[#D4AF37]"
+              className="bg-white rounded-xl p-6 shadow-lg text-center border-t-4 border-[#D4AF37] relative overflow-hidden"
             >
-              <div className="w-16 h-16 bg-[#F5F5DC] rounded-full flex items-center justify-center mx-auto mb-4">
-                <stat.icon className="text-[#0A2E5C]" size={28} />
+              <div className={`w-16 h-16 bg-gradient-to-br ${phase.color} rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg`}>
+                <phase.icon className="text-white" size={28} />
               </div>
-              <h3 className="text-[#0A2E5C] mb-2">{stat.value}</h3>
-              <p className="text-[#666666]">{stat.label}</p>
+              <h3 className="text-[#0A2E5C] mb-3 text-lg font-bold">{phase.title}</h3>
+              <p className="text-[#666666] leading-relaxed">{phase.desc}</p>
+              
+              {/* Connection Line */}
+              {index < 2 && (
+                <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-[#D4AF37] to-transparent"></div>
+              )}
             </motion.div>
           ))}
         </motion.div>

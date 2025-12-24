@@ -15,33 +15,60 @@ const translations = {
   ko: {
     // Header
     'nav.about': '소개',
-    'nav.services': '서비스',
-    'nav.holistic': '전인적 케어',
-    'nav.testimonials': '후기',
+    'nav.services': '이별동행케어',
+    'nav.holistic': '세 가지 축',
+    'nav.testimonials': '우리가 다른 이유',
     'nav.contact': '연락처',
     'nav.support': '24시간 지원',
     
     // Hero Section
-    'hero.title': '사후세계를 기리며',
-    'hero.subtitle': '정성스럽게 준비된 장례 및 추모 서비스',
-    'hero.cta.immediate': '즉시 도움 받기',
-    'hero.cta.explore': '서비스 둘러보기',
+    'hero.title': '루시드라이프',
+    'hero.subtitle1': '루시드라이프는 장례를 대신해주는 곳이 아닙니다.',
+    'hero.subtitle2': '서툰 이별 앞에, 함께 서 있는 곳입니다.',
+    'hero.cta.immediate': '상담 문의',
+    'hero.cta.explore': '서비스 알아보기',
     
-    // About Section
-    'about.badge': '우리에 대해',
-    'about.title': '존경과 품위로 삶을 기리다',
-    'about.description': '어려운 시기에 가족들에게 자비롭고 전문적인 지원을 제공하는 것이 우리의 사명입니다. 각 가족의 고유한 필요와 전통을 이해하며, 개인화된 서비스를 통해 사랑하는 이를 기릴 수 있도록 돕습니다.',
-    'about.feature1.title': '24시간 지원',
-    'about.feature1.desc': '언제든지 도움이 필요할 때',
-    'about.feature2.title': '개인화된 서비스',
-    'about.feature2.desc': '각 가족의 고유한 필요에 맞춤',
-    'about.feature3.title': '전문적인 케어',
-    'about.feature3.desc': '경험 많은 전문가들의 지원',
+    // About Section (이별동행케어)
+    'about.badge': '이별동행케어',
+    'about.title': '임종 전부터 이별 이후까지.',
+    'about.subtitle': '한 사람의 전 과정을, 하나의 팀이 돌봅니다.',
+    'about.phase1.title': '임종 전',
+    'about.phase1.desc': '불안을 줄이는 준비',
+    'about.phase2.title': '장례 중',
+    'about.phase2.desc': '절차보다 사람',
+    'about.phase3.title': '이별 이후',
+    'about.phase3.desc': '일상으로 돌아가는 정리',
     
-    // Services Section
-    'services.badge': '우리의 서비스',
-    'services.title': '포괄적인 장례 서비스',
-    'services.description': '전통적인 장례식부터 현대적인 추모 서비스까지, 모든 가족의 필요를 충족시키는 다양한 옵션을 제공합니다.',
+    // Services Section (세 가지 축)
+    'services.badge': '세 가지 축',
+    'services.axis1.title': '전통의 재해석',
+    'services.axis1.subtitle': '고종황제 입관 의식을 재현한 격조.',
+    'services.axis1.desc': '전통을 넘어, 의전으로.',
+    'services.axis2.title': '시대의 요구',
+    'services.axis2.subtitle': '국내 최초, 미국식 메모리얼 장례.',
+    'services.axis2.desc': '장례식장이 아닌, 원하는 곳에서.',
+    'services.axis3.title': '영혼의 보살핌',
+    'services.axis3.subtitle': '죽음학과 심리상담을 통합한 의식 케어.',
+    'services.axis3.desc': '이별 앞에서, 깨어 있도록.',
+    
+    // 우리가 다른 이유
+    'difference.badge': '우리가 다른 이유',
+    'difference.reason1.title': '하나의 책임선',
+    'difference.reason1.desc': '임종 전·중·후, 끊기지 않습니다.',
+    'difference.reason2.title': '설명의 최소화',
+    'difference.reason2.desc': '필요한 시점에, 필요한 만큼만.',
+    'difference.reason3.title': '감정의 존중',
+    'difference.reason3.desc': '절차보다 사람의 상태를 먼저 봅니다.',
+    
+    // 대표 소개
+    'ceo.name': '도원',
+    'ceo.title': '루시드라이프 대표',
+    'ceo.cert1': '국가공인 장례지도사',
+    'ceo.cert2': '최면 상담 전문가',
+    'ceo.current': '現 대한 장례지도사 연합회 사무국장',
+    'ceo.prev1': '前 MBC마당놀이 국악관현악단 지휘자',
+    'ceo.prev2': '前 프리드라이프 전국 1% 의전팀장',
+    'ceo.quote': '"이별은 끝이 아니라, 한 사람을 기억하는 시작입니다."',
     
     // Contact Section
     'contact.badge': '연락하기',
@@ -69,33 +96,60 @@ const translations = {
   en: {
     // Header
     'nav.about': 'About',
-    'nav.services': 'Services',
-    'nav.holistic': 'Holistic Care',
-    'nav.testimonials': 'Testimonials',
+    'nav.services': 'Farewell Care',
+    'nav.holistic': 'Three Pillars',
+    'nav.testimonials': 'Our Difference',
     'nav.contact': 'Contact',
     'nav.support': '24/7 Support',
     
     // Hero Section
-    'hero.title': 'Honoring Afterlife',
-    'hero.subtitle': 'Thoughtfully Curated Funeral & Memorial Services',
-    'hero.cta.immediate': 'Get Immediate Assistance',
-    'hero.cta.explore': 'Explore Services',
+    'hero.title': 'LucidLife',
+    'hero.subtitle1': 'LucidLife is not a place that handles funerals for you.',
+    'hero.subtitle2': 'It is a place that stands with you in the face of difficult farewells.',
+    'hero.cta.immediate': 'Consultation',
+    'hero.cta.explore': 'Learn More',
     
-    // About Section
-    'about.badge': 'About Us',
-    'about.title': 'Honoring Lives with Respect and Dignity',
-    'about.description': 'Our mission is to provide compassionate and professional support to families during their most difficult times. We understand that each family has unique needs and traditions, and we are committed to helping you honor your loved one with personalized services.',
-    'about.feature1.title': '24/7 Support',
-    'about.feature1.desc': 'Always here when you need us',
-    'about.feature2.title': 'Personalized Service',
-    'about.feature2.desc': 'Tailored to each family\'s unique needs',
-    'about.feature3.title': 'Professional Care',
-    'about.feature3.desc': 'Experienced professionals at your service',
+    // About Section (Farewell Care)
+    'about.badge': 'Farewell Care',
+    'about.title': 'From before death to after farewell.',
+    'about.subtitle': 'One team takes care of the entire process of one person.',
+    'about.phase1.title': 'Before Death',
+    'about.phase1.desc': 'Preparation to reduce anxiety',
+    'about.phase2.title': 'During Funeral',
+    'about.phase2.desc': 'People over procedures',
+    'about.phase3.title': 'After Farewell',
+    'about.phase3.desc': 'Organizing to return to daily life',
     
-    // Services Section
-    'services.badge': 'Our Services',
-    'services.title': 'Comprehensive Funeral Services',
-    'services.description': 'From traditional funeral services to contemporary memorial options, we offer a range of services to meet every family\'s needs.',
+    // Services Section (Three Pillars)
+    'services.badge': 'Three Pillars',
+    'services.axis1.title': 'Reinterpretation of Tradition',
+    'services.axis1.subtitle': 'The dignity of recreating Emperor Gojong\'s burial ceremony.',
+    'services.axis1.desc': 'Beyond tradition, to protocol.',
+    'services.axis2.title': 'Contemporary Needs',
+    'services.axis2.subtitle': 'Korea\'s first American-style memorial funeral.',
+    'services.axis2.desc': 'Not in a funeral hall, but where you want.',
+    'services.axis3.title': 'Care for the Soul',
+    'services.axis3.subtitle': 'Ritual care integrating thanatology and psychological counseling.',
+    'services.axis3.desc': 'To stay awake in the face of farewell.',
+    
+    // Our Difference
+    'difference.badge': 'Our Difference',
+    'difference.reason1.title': 'One Line of Responsibility',
+    'difference.reason1.desc': 'Before, during, and after death - uninterrupted.',
+    'difference.reason2.title': 'Minimal Explanation',
+    'difference.reason2.desc': 'Only what\'s needed, when it\'s needed.',
+    'difference.reason3.title': 'Respect for Emotions',
+    'difference.reason3.desc': 'We see the person\'s state before procedures.',
+    
+    // CEO Introduction
+    'ceo.name': 'Dowon',
+    'ceo.title': 'LucidLife CEO',
+    'ceo.cert1': 'Certified National Funeral Director',
+    'ceo.cert2': 'Hypnotherapy Counseling Specialist',
+    'ceo.current': 'Current Secretary General of Korea Funeral Directors Association',
+    'ceo.prev1': 'Former Conductor of MBC Madangnori Korean Traditional Orchestra',
+    'ceo.prev2': 'Former Top 1% Protocol Team Leader at FreeLife',
+    'ceo.quote': '"Farewell is not the end, but the beginning of remembering a person."',
     
     // Contact Section
     'contact.badge': 'Get In Touch',
