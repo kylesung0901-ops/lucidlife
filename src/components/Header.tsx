@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
+import { LucidLifeLogo } from "./LucidLifeLogo";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,23 +38,9 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <motion.a
-            href="#"
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center"
-          >
-            <img 
-              src="/lucidlife-logo.png" 
-              alt="LucidLife Logo" 
-              className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto object-contain"
-              style={{ 
-                minHeight: '80px', 
-                maxHeight: '128px',
-                width: 'auto',
-                objectFit: 'contain'
-              }}
-            />
-          </motion.a>
+          <a href="#" className="flex items-center">
+            <LucidLifeLogo size="lg" showText={true} />
+          </a>
           
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
