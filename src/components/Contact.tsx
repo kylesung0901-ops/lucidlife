@@ -86,8 +86,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-[#2F2F2F] mb-1">{t('contact.phone')}</p>
-                  <p className="text-[#666666]">+91 98765 43210</p>
-                  <p className="text-[#666666]">+91 98765 43211</p>
+                  <p className="text-[#666666]">010-2116-4114</p>
                 </div>
               </motion.div>
               
@@ -103,7 +102,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-[#2F2F2F] mb-1">{t('contact.email')}</p>
-                  <p className="text-[#666666]">care@thelaststring.com</p>
+                  <p className="text-[#666666]">info@lucidlife.co.kr</p>
                 </div>
               </motion.div>
               
@@ -119,7 +118,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-[#2F2F2F] mb-1">{t('contact.location')}</p>
-                  <p className="text-[#666666]">Mumbai, Maharashtra, India</p>
+                  <p className="text-[#666666]">경기도 파주시 교하로 100, 908-102</p>
                 </div>
               </motion.div>
             </div>

@@ -17,7 +17,7 @@ export function FloatingButtons() {
       
       {/* 전화 버튼 */}
       <motion.a
-        href="tel:+919876543210"
+        href="tel:010-2116-4114"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         className="w-14 h-14 bg-[#D4AF37] rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all"

@@ -46,7 +46,7 @@ export function Footer() {
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <Phone size={16} className="text-[#D4AF37]" />
-                  <span className="text-white/80">24시간 상담: 1588-0000</span>
+                  <span className="text-white/80">24시간 상담: 010-2116-4114</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail size={16} className="text-[#D4AF37]" />
@@ -54,7 +54,7 @@ export function Footer() {
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin size={16} className="text-[#D4AF37]" />
-                  <span className="text-white/80">서울특별시 강남구 테헤란로 123</span>
+                  <span className="text-white/80">경기도 파주시 교하로 100, 908-102</span>
                 </div>
               </div>
             </motion.div>
@@ -69,11 +69,11 @@ export function Footer() {
             >
               <h4 className="text-lg font-semibold mb-4 text-[#D4AF37]">사업자 정보</h4>
               <div className="space-y-2 text-sm text-white/70">
-                <p>상호명: (주)루시드라이프</p>
-                <p>대표자: 도원</p>
-                <p>사업자등록번호: 123-45-67890</p>
-                <p>통신판매업신고: 제2024-서울강남-0000호</p>
-                <p>개인정보보호책임자: 도원</p>
+                <p>상호명: 루시드라이프</p>
+                <p>대표자: 서동원</p>
+                <p>사업자등록번호: 123-92-47792</p>
+                <p>사업장소재지: 경기도 파주시 교하로 100, 908-102</p>
+                <p>개인정보보호책임자: 서동원</p>
               </div>
             </motion.div>
           </div>

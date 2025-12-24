@@ -79,7 +79,7 @@ export function Header() {
             
             <div className="flex items-center gap-4">
               <motion.a
-                href="tel:+919876543210"
+                href="tel:010-2116-4114"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
