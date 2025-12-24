@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F4E4C1;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#E5D5B7;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#C9A66B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8956A;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#C9A66B;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#D4B876;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C9A66B;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- X자 형태의 상단 부분 -->
+  <path d="M160 50 C180 45 200 45 220 50 L280 50 C300 45 320 45 340 50 L300 100 L250 85 L200 100 Z" 
+        fill="url(#goldGradient)" opacity="0.9"/>
+  
+  <!-- X자 형태의 교차 부분 -->
+  <path d="M200 100 L250 85 L300 100 L280 130 L250 120 L220 130 Z" 
+        fill="url(#goldGradient)" opacity="0.95"/>
+  
+  <!-- 하단 곡선 베이스 -->
+  <path d="M120 180 Q130 160 150 160 L180 170 Q200 175 220 180 L250 185 L280 180 Q300 175 320 170 L350 160 Q370 160 380 180 
+           L380 300 Q380 330 360 340 L350 345 Q330 350 300 350 L200 350 Q170 350 150 345 L140 340 Q120 330 120 300 Z" 
+        fill="url(#goldGradient)"/>
+  
+  <!-- 내부 곡선 -->
+  <path d="M160 200 Q180 220 200 240 Q220 260 250 265 Q280 260 300 240 Q320 220 340 200 
+           L340 280 Q340 300 320 310 L300 315 Q280 320 250 320 Q220 320 200 315 L180 310 Q160 300 160 280 Z" 
+        fill="white" opacity="0.3"/>
+  
+  <!-- LUCIDLIFE 텍스트 -->
+  <g transform="translate(250, 420)">
+    <text x="0" y="0" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" 
+          text-anchor="middle" fill="url(#textGradient)" letter-spacing="2px">
+      LUCIDLIFE
+    </text>
+  </g>
+</svg>

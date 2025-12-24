@@ -25,17 +25,21 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* 좌측 - 루시드라이프 로고 */}
-          <motion.div
+          <motion.a
+            href="#"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
             whileHover={{ scale: 1.02 }}
             className="flex items-center"
           >
-            <h1 className="text-2xl font-bold text-[#141C2E]" style={{ fontFamily: 'Pretendard, sans-serif' }}>
-              루시드라이프
-            </h1>
-          </motion.div>
+            <img 
+              src="/lucidlife-logo-new.svg" 
+              alt="LucidLife Logo" 
+              className="h-12 w-auto object-contain"
+              style={{ minHeight: '48px', maxHeight: '60px' }}
+            />
+          </motion.a>
 
           {/* 우측 - 액션 버튼들 */}
           <div className="flex items-center gap-3">

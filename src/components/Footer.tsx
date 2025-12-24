@@ -25,9 +25,9 @@ export function Footer() {
               transition={{ duration: 0.6 }}
             >
               <img 
-                src="/lucidlife-logo.png" 
+                src="/lucidlife-logo-new.svg" 
                 alt="LucidLife Logo" 
-                className="h-12 w-auto mb-4"
+                className="h-16 w-auto mb-4"
               />
               <p className="text-white/80 leading-relaxed mb-6">
                 서툰 이별 앞에, 함께 서 있는 곳입니다.
