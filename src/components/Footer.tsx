@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { useInView } from "motion/react";
 import { useRef } from "react";
-import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 
 export function Footer() {
   const ref = useRef(null);
@@ -13,91 +13,83 @@ export function Footer() {
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.8 }}
-      className="bg-[#0A2E5C] text-white py-12 px-6"
+      className="bg-[#2C2C2C] text-white py-16 px-6"
     >
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
-          {/* Brand */}
+        <div className="grid md:grid-cols-3 gap-12 mb-12">
+          {/* Company Info */}
           <div>
-            <h3 className="text-[#D4AF37] mb-4">The Last String</h3>
-            <p className="text-white/80">
-              Celebrating life, honoring afterlife with compassion and dignity.
-            </p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6 }}
+            >
+              <img 
+                src="/lucidlife-logo.png" 
+                alt="LucidLife Logo" 
+                className="h-12 w-auto mb-4"
+              />
+              <p className="text-white/80 leading-relaxed mb-6">
+                서툰 이별 앞에, 함께 서 있는 곳입니다.
+              </p>
+            </motion.div>
           </div>
-          
-          {/* Quick Links */}
+
+          {/* Contact Info */}
           <div>
-            <h4 className="text-[#D4AF37] mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li>
-                <a href="#about" className="text-white/80 hover:text-[#D4AF37] transition-colors">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="text-white/80 hover:text-[#D4AF37] transition-colors">
-                  Our Services
-                </a>
-              </li>
-              <li>
-                <a href="#testimonials" className="text-white/80 hover:text-[#D4AF37] transition-colors">
-                  Testimonials
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="text-white/80 hover:text-[#D4AF37] transition-colors">
-                  Contact
-                </a>
-              </li>
-            </ul>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <h4 className="text-lg font-semibold mb-4 text-[#D4AF37]">연락처</h4>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <Phone size={16} className="text-[#D4AF37]" />
+                  <span className="text-white/80">24시간 상담: 1588-0000</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Mail size={16} className="text-[#D4AF37]" />
+                  <span className="text-white/80">info@lucidlife.co.kr</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <MapPin size={16} className="text-[#D4AF37]" />
+                  <span className="text-white/80">서울특별시 강남구 테헤란로 123</span>
+                </div>
+              </div>
+            </motion.div>
           </div>
-          
-          {/* Social Media */}
+
+          {/* Business Info */}
           <div>
-            <h4 className="text-[#D4AF37] mb-4">Connect With Us</h4>
-            <div className="flex gap-4">
-              <motion.a
-                href="#"
-                whileHover={{ scale: 1.2, rotate: 5 }}
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#D4AF37] transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook size={20} />
-              </motion.a>
-              <motion.a
-                href="#"
-                whileHover={{ scale: 1.2, rotate: 5 }}
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#D4AF37] transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram size={20} />
-              </motion.a>
-              <motion.a
-                href="#"
-                whileHover={{ scale: 1.2, rotate: 5 }}
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#D4AF37] transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter size={20} />
-              </motion.a>
-              <motion.a
-                href="#"
-                whileHover={{ scale: 1.2, rotate: 5 }}
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#D4AF37] transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={20} />
-              </motion.a>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <h4 className="text-lg font-semibold mb-4 text-[#D4AF37]">사업자 정보</h4>
+              <div className="space-y-2 text-sm text-white/70">
+                <p>상호명: (주)루시드라이프</p>
+                <p>대표자: 도원</p>
+                <p>사업자등록번호: 123-45-67890</p>
+                <p>통신판매업신고: 제2024-서울강남-0000호</p>
+                <p>개인정보보호책임자: 도원</p>
+              </div>
+            </motion.div>
           </div>
         </div>
-        
+
         {/* Copyright */}
-        <div className="border-t border-white/20 pt-8 text-center">
-          <p className="text-white/60">
-            © {new Date().getFullYear()} The Last String. All rights reserved. Serving families with compassion and care.
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="border-t border-white/20 pt-8 text-center"
+        >
+          <p className="text-white/60 text-sm">
+            © 2024 LucidLife. All rights reserved. | 개인정보처리방침 | 이용약관
           </p>
-        </div>
+        </motion.div>
       </div>
     </motion.footer>
   );

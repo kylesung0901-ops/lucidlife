@@ -20,11 +20,12 @@ export function Header() {
   const { t } = useLanguage();
   
   const navItems = [
-    { label: t('nav.about'), href: "#about" },
-    { label: t('nav.services'), href: "#services" },
-    { label: t('nav.holistic'), href: "#holistic" },
-    { label: t('nav.testimonials'), href: "#testimonials" },
-    { label: t('nav.contact'), href: "#contact" }
+    { label: t('nav.lucidlife'), href: "#hero" },
+    { label: t('nav.together'), href: "#together" },
+    { label: t('nav.threedays'), href: "#threedays" },
+    { label: t('nav.restingplace'), href: "#restingplace" },
+    { label: t('nav.stories'), href: "#stories" },
+    { label: t('nav.withus'), href: "#withus" }
   ];
   
   return (
@@ -76,18 +77,31 @@ export function Header() {
             {/* Language Toggle */}
             <LanguageToggle />
             
-            <motion.a
-              href="tel:+919876543210"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-[#D4AF37] text-[#0A2E5C] px-6 py-3 rounded-full flex items-center gap-2 hover:bg-[#e0bf4d] transition-colors"
-            >
-              <Phone size={18} />
-              {t('nav.support')}
-            </motion.a>
+            <div className="flex items-center gap-4">
+              <motion.a
+                href="tel:+919876543210"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-[#D4AF37] text-[#0A2E5C] px-4 py-2 rounded-full flex items-center gap-2 hover:bg-[#e0bf4d] transition-colors text-sm"
+              >
+                <Phone size={16} />
+                전화
+              </motion.a>
+              <motion.a
+                href="#"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-[#FEE500] text-[#3C1E1E] px-4 py-2 rounded-full flex items-center gap-2 hover:bg-[#FFEB3B] transition-colors text-sm"
+              >
+                💬 카톡
+              </motion.a>
+            </div>
           </nav>
           
           {/* Mobile Menu Button */}

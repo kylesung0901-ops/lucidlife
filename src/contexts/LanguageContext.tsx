@@ -14,19 +14,29 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 const translations = {
   ko: {
     // Header
-    'nav.about': '소개',
-    'nav.services': '이별동행케어',
-    'nav.holistic': '세 가지 축',
-    'nav.testimonials': '우리가 다른 이유',
-    'nav.contact': '연락처',
+    'nav.lucidlife': '루시드라이프',
+    'nav.together': '함께하는 방식',
+    'nav.threedays': '사흘동안',
+    'nav.restingplace': '마지막 안식처',
+    'nav.stories': '이별 이야기',
+    'nav.withus': '루시드와 함께',
     'nav.support': '24시간 지원',
     
     // Hero Section
-    'hero.title': '루시드라이프',
-    'hero.subtitle1': '루시드라이프는 장례를 대신해주는 곳이 아닙니다.',
-    'hero.subtitle2': '서툰 이별 앞에, 함께 서 있는 곳입니다.',
-    'hero.cta.immediate': '상담 문의',
-    'hero.cta.explore': '서비스 알아보기',
+    'hero.title': '모든 이별은 서툴기에,',
+    'hero.subtitle': '누군가는 그 곁에 선다.',
+    
+    // Why Lucid Life
+    'why.question1': '왜 그렇게 해왔을까요?',
+    'why.answer1': '형식이 아닌, 의미를 복원합니다.',
+    'why.question2': '꼭 장례식장이어야 하나요?',
+    'why.answer2': '원하는 곳에서, 원하는 방식으로.',
+    'why.question3': '보낸 후, 당신은요?',
+    'why.answer3': '이별 후에도, 곁에 있습니다.',
+    
+    // CTA
+    'cta.title': '루시드와 함께.',
+    'cta.button': '사전등록',
     
     // About Section (이별동행케어)
     'about.badge': '이별동행케어',
@@ -95,19 +105,29 @@ const translations = {
   },
   en: {
     // Header
-    'nav.about': 'About',
-    'nav.services': 'Farewell Care',
-    'nav.holistic': 'Three Pillars',
-    'nav.testimonials': 'Our Difference',
-    'nav.contact': 'Contact',
+    'nav.lucidlife': 'LucidLife',
+    'nav.together': 'Our Approach',
+    'nav.threedays': 'Three Days',
+    'nav.restingplace': 'Final Resting Place',
+    'nav.stories': 'Farewell Stories',
+    'nav.withus': 'With LucidLife',
     'nav.support': '24/7 Support',
     
     // Hero Section
-    'hero.title': 'LucidLife',
-    'hero.subtitle1': 'LucidLife is not a place that handles funerals for you.',
-    'hero.subtitle2': 'It is a place that stands with you in the face of difficult farewells.',
-    'hero.cta.immediate': 'Consultation',
-    'hero.cta.explore': 'Learn More',
+    'hero.title': 'Every farewell is awkward,',
+    'hero.subtitle': 'Someone stands by your side.',
+    
+    // Why Lucid Life
+    'why.question1': 'Why have we done it that way?',
+    'why.answer1': 'We restore meaning, not formality.',
+    'why.question2': 'Does it have to be a funeral home?',
+    'why.answer2': 'Where you want, how you want.',
+    'why.question3': 'What about you after sending them off?',
+    'why.answer3': 'Even after farewell, we remain by your side.',
+    
+    // CTA
+    'cta.title': 'With LucidLife.',
+    'cta.button': 'Pre-register',
     
     // About Section (Farewell Care)
     'about.badge': 'Farewell Care',

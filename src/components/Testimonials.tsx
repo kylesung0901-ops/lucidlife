@@ -41,7 +41,7 @@ export function Testimonials() {
   ];
   
   return (
-    <section id="testimonials" ref={ref} className="py-24 px-6 bg-gradient-to-b from-[#F9F7F4] to-white relative overflow-hidden">
+    <section id="ceo" ref={ref} className="py-24 px-6 bg-[#FAFAFA] relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-10 right-10 w-64 h-64 bg-[#D4AF37]/5 rounded-full blur-3xl" />
       <div className="absolute bottom-10 left-10 w-80 h-80 bg-[#0A2E5C]/5 rounded-full blur-3xl" />
@@ -57,11 +57,11 @@ export function Testimonials() {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-[#0A2E5C] mb-4 text-4xl font-bold"
+            className="text-3xl md:text-4xl font-light text-[#2C2C2C] mb-4"
           >
             {t('ceo.name')}
           </motion.h2>
-          <p className="text-[#D4AF37] text-xl font-semibold mb-2">
+          <p className="text-[#D4AF37] text-lg font-medium mb-2">
             {t('ceo.title')}
           </p>
         </motion.div>
@@ -74,9 +74,13 @@ export function Testimonials() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative"
           >
-            <div className="bg-white rounded-2xl shadow-2xl p-8 relative overflow-hidden">
-              <div className="w-48 h-48 mx-auto mb-6 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#e0bf4d] flex items-center justify-center text-white text-6xl font-bold shadow-xl">
-                도
+            <div className="bg-white rounded-2xl shadow-xl p-8 relative overflow-hidden">
+              <div className="w-48 h-48 mx-auto mb-6 rounded-2xl overflow-hidden shadow-lg">
+                <img 
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"
+                  alt="도원 대표"
+                  className="w-full h-full object-cover"
+                />
               </div>
               
               {/* Credentials */}
@@ -108,7 +112,7 @@ export function Testimonials() {
           >
             {/* Experience */}
             <div className="bg-white rounded-2xl shadow-xl p-6">
-              <h3 className="text-[#0A2E5C] font-bold text-xl mb-6">경력</h3>
+              <h3 className="text-[#2C2C2C] font-semibold text-xl mb-6">경력</h3>
               <div className="space-y-4">
                 {experiences.map((exp, index) => (
                   <motion.div
@@ -130,10 +134,10 @@ export function Testimonials() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="bg-gradient-to-br from-[#D4AF37]/10 to-[#0A2E5C]/10 rounded-2xl p-8 relative"
+              className="bg-gradient-to-br from-[#D4AF37]/10 to-[#8B7355]/10 rounded-2xl p-8 relative"
             >
               <Quote className="absolute top-4 left-4 text-[#D4AF37] opacity-30" size={32} />
-              <p className="text-[#0A2E5C] text-xl font-medium italic text-center leading-relaxed pt-4">
+              <p className="text-[#2C2C2C] text-lg font-medium italic text-center leading-relaxed pt-4">
                 {t('ceo.quote')}
               </p>
             </motion.div>
