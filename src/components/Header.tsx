@@ -34,10 +34,10 @@ export function Header() {
             className="flex items-center"
           >
             <img 
-              src="/lucidlife-logo-new.svg" 
-              alt="LucidLife Logo" 
-              className="h-12 w-auto object-contain"
-              style={{ minHeight: '48px', maxHeight: '60px' }}
+              src="/lucidlife-logo.png" 
+              alt="LucidLife 루시드라이프" 
+              className="h-14 sm:h-16 md:h-20 w-auto object-contain"
+              style={{ minHeight: '56px', maxHeight: '80px' }}
             />
           </motion.a>
 
