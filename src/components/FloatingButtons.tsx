@@ -20,10 +20,10 @@ export function FloatingButtons() {
         href="tel:010-2116-4114"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="w-14 h-14 bg-[#D4AF37] rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all"
+        className="w-14 h-14 bg-[#C9A66B] rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all"
         aria-label="전화 상담"
       >
-        <Phone className="text-white" size={24} />
+        <Phone className="text-[#0D1421]" size={24} />
       </motion.a>
     </div>
   );

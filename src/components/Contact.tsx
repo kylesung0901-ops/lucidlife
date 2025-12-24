@@ -30,11 +30,11 @@ export function Contact() {
   };
   
   return (
-    <section id="contact" ref={ref} className="py-16 px-6 bg-white relative overflow-hidden">
+    <section id="contact" ref={ref} className="py-16 px-6 bg-[#0D1421] relative overflow-hidden">
       {/* Decorative Background */}
       <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute top-20 right-10 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-10 w-80 h-80 bg-[#0A2E5C]/10 rounded-full blur-3xl" />
+        <div className="absolute top-20 right-10 w-96 h-96 bg-[#C9A66B]/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-10 w-80 h-80 bg-[#1A2538]/30 rounded-full blur-3xl" />
       </div>
       
       <div className="max-w-6xl mx-auto relative z-10">
@@ -48,12 +48,12 @@ export function Contact() {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-[#D4AF37] tracking-wider uppercase mb-4 block"
+            className="text-[#C9A66B] tracking-wider uppercase mb-4 block"
           >
             {t('contact.badge')}
           </motion.span>
-          <h2 className="text-[#0A2E5C] mb-4">{t('contact.title')}</h2>
-          <p className="text-[#666666]">
+          <h2 className="text-[#F5F1E6] mb-4">{t('contact.title')}</h2>
+          <p className="text-[#F5F1E6]/70">
             {t('contact.description')}
           </p>
         </motion.div>
@@ -67,8 +67,8 @@ export function Contact() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-[#0A2E5C] mb-6">{t('contact.reach')}</h3>
-              <p className="text-[#666666] mb-8">
+              <h3 className="text-[#F5F1E6] mb-6">{t('contact.reach')}</h3>
+              <p className="text-[#F5F1E6]/70 mb-8">
                 {t('contact.available')}
               </p>
             </div>
@@ -79,14 +79,14 @@ export function Contact() {
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 whileHover={{ x: 5 }}
-                className="flex items-start gap-4 bg-white rounded-xl p-5 shadow-lg"
+                className="flex items-start gap-4 bg-[#1A2538] rounded-xl p-5 border border-[#C9A66B]/20"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-[#D4AF37] to-[#e0bf4d] rounded-full flex items-center justify-center flex-shrink-0">
-                  <Phone className="text-white" size={20} />
+                <div className="w-12 h-12 bg-gradient-to-br from-[#C9A66B] to-[#D4B87A] rounded-full flex items-center justify-center flex-shrink-0">
+                  <Phone className="text-[#0D1421]" size={20} />
                 </div>
                 <div>
-                  <p className="text-[#2F2F2F] mb-1">{t('contact.phone')}</p>
-                  <p className="text-[#666666]">010-2116-4114</p>
+                  <p className="text-[#F5F1E6] mb-1">{t('contact.phone')}</p>
+                  <p className="text-[#C9A66B]">010-2116-4114</p>
                 </div>
               </motion.div>
               
@@ -95,14 +95,14 @@ export function Contact() {
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
                 whileHover={{ x: 5 }}
-                className="flex items-start gap-4 bg-white rounded-xl p-5 shadow-lg"
+                className="flex items-start gap-4 bg-[#1A2538] rounded-xl p-5 border border-[#C9A66B]/20"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-[#D4AF37] to-[#e0bf4d] rounded-full flex items-center justify-center flex-shrink-0">
-                  <Mail className="text-white" size={20} />
+                <div className="w-12 h-12 bg-gradient-to-br from-[#C9A66B] to-[#D4B87A] rounded-full flex items-center justify-center flex-shrink-0">
+                  <Mail className="text-[#0D1421]" size={20} />
                 </div>
                 <div>
-                  <p className="text-[#2F2F2F] mb-1">{t('contact.email')}</p>
-                  <p className="text-[#666666]">info@lucidlife.co.kr</p>
+                  <p className="text-[#F5F1E6] mb-1">{t('contact.email')}</p>
+                  <p className="text-[#C9A66B]">info@lucidlife.co.kr</p>
                 </div>
               </motion.div>
               
@@ -111,14 +111,14 @@ export function Contact() {
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
                 whileHover={{ x: 5 }}
-                className="flex items-start gap-4 bg-white rounded-xl p-5 shadow-lg"
+                className="flex items-start gap-4 bg-[#1A2538] rounded-xl p-5 border border-[#C9A66B]/20"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-[#D4AF37] to-[#e0bf4d] rounded-full flex items-center justify-center flex-shrink-0">
-                  <MapPin className="text-white" size={20} />
+                <div className="w-12 h-12 bg-gradient-to-br from-[#C9A66B] to-[#D4B87A] rounded-full flex items-center justify-center flex-shrink-0">
+                  <MapPin className="text-[#0D1421]" size={20} />
                 </div>
                 <div>
-                  <p className="text-[#2F2F2F] mb-1">{t('contact.location')}</p>
-                  <p className="text-[#666666]">경기도 파주시 교하로 100, 908-102</p>
+                  <p className="text-[#F5F1E6] mb-1">{t('contact.location')}</p>
+                  <p className="text-[#C9A66B]">경기도 파주시 교하로 100, 908-102</p>
                 </div>
               </motion.div>
             </div>
@@ -129,11 +129,11 @@ export function Contact() {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="bg-white rounded-2xl p-8 shadow-2xl"
+            className="bg-[#1A2538] rounded-2xl p-8 border border-[#C9A66B]/20"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-[#2F2F2F] mb-2">
+                <label htmlFor="name" className="block text-[#F5F1E6] mb-2">
                   {t('contact.form.name')}
                 </label>
                 <input
@@ -143,12 +143,12 @@ export function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border-2 border-[#D3D3D3] rounded-lg focus:outline-none focus:border-[#D4AF37] transition-colors"
+                  className="w-full px-4 py-3 bg-[#0D1421] border border-[#C9A66B]/30 rounded-lg text-[#F5F1E6] focus:outline-none focus:border-[#C9A66B] transition-colors"
                 />
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-[#2F2F2F] mb-2">
+                <label htmlFor="email" className="block text-[#F5F1E6] mb-2">
                   {t('contact.form.email')}
                 </label>
                 <input
@@ -158,12 +158,12 @@ export function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border-2 border-[#D3D3D3] rounded-lg focus:outline-none focus:border-[#D4AF37] transition-colors"
+                  className="w-full px-4 py-3 bg-[#0D1421] border border-[#C9A66B]/30 rounded-lg text-[#F5F1E6] focus:outline-none focus:border-[#C9A66B] transition-colors"
                 />
               </div>
               
               <div>
-                <label htmlFor="phone" className="block text-[#2F2F2F] mb-2">
+                <label htmlFor="phone" className="block text-[#F5F1E6] mb-2">
                   {t('contact.form.phone')}
                 </label>
                 <input
@@ -173,12 +173,12 @@ export function Contact() {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border-2 border-[#D3D3D3] rounded-lg focus:outline-none focus:border-[#D4AF37] transition-colors"
+                  className="w-full px-4 py-3 bg-[#0D1421] border border-[#C9A66B]/30 rounded-lg text-[#F5F1E6] focus:outline-none focus:border-[#C9A66B] transition-colors"
                 />
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-[#2F2F2F] mb-2">
+                <label htmlFor="message" className="block text-[#F5F1E6] mb-2">
                   {t('contact.form.message')}
                 </label>
                 <textarea
@@ -187,7 +187,7 @@ export function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  className="w-full px-4 py-3 border-2 border-[#D3D3D3] rounded-lg focus:outline-none focus:border-[#D4AF37] transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-[#0D1421] border border-[#C9A66B]/30 rounded-lg text-[#F5F1E6] focus:outline-none focus:border-[#C9A66B] transition-colors resize-none"
                 />
               </div>
               
@@ -195,7 +195,7 @@ export function Contact() {
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full bg-gradient-to-r from-[#D4AF37] to-[#e0bf4d] text-white py-4 rounded-full inline-flex items-center justify-center gap-2 hover:shadow-xl transition-shadow"
+                className="w-full bg-[#C9A66B] text-[#0D1421] py-4 rounded-full inline-flex items-center justify-center gap-2 hover:opacity-90 transition-opacity font-medium"
               >
                 {t('contact.form.send')}
                 <Send size={20} />

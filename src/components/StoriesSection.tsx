@@ -26,7 +26,7 @@ export function StoriesSection() {
   ];
   
   return (
-    <section id="stories" ref={ref} className="py-24 px-6 bg-white">
+    <section id="stories" ref={ref} className="py-24 px-6 bg-[#0D1421]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -34,7 +34,7 @@ export function StoriesSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-light text-[#141C2E] mb-4" style={{ fontFamily: 'Pretendard, sans-serif' }}>
+          <h2 className="text-3xl md:text-4xl font-light text-[#F5F1E6] mb-4" style={{ fontFamily: 'Pretendard, sans-serif' }}>
             이별 이야기
           </h2>
         </motion.div>
@@ -46,18 +46,18 @@ export function StoriesSection() {
               initial={{ opacity: 0, x: -50 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="flex items-start gap-4 p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+              className="flex items-start gap-4 p-6 bg-[#1A2538] rounded-2xl border border-[#C9A66B]/20 hover:border-[#C9A66B]/40 transition-all duration-300"
             >
               <div className="flex-shrink-0 mt-1">
                 <div className="w-6 h-6 bg-[#C9A66B] rounded-full flex items-center justify-center">
-                  <span className="text-white text-sm">✓</span>
+                  <span className="text-[#0D1421] text-sm">✓</span>
                 </div>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-[#141C2E] mb-2" style={{ fontFamily: 'Pretendard, sans-serif' }}>
+                <h3 className="text-lg font-semibold text-[#F5F1E6] mb-2" style={{ fontFamily: 'Pretendard, sans-serif' }}>
                   {story.title}
                 </h3>
-                <p className="text-[#C9A66B] leading-relaxed font-light" style={{ fontFamily: 'Pretendard, sans-serif' }}>
+                <p className="text-[#C9A66B]/80 leading-relaxed font-light" style={{ fontFamily: 'Pretendard, sans-serif' }}>
                   {story.description}
                 </p>
               </div>
@@ -74,7 +74,7 @@ export function StoriesSection() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="border-2 border-[#D4AF37] text-[#D4AF37] px-8 py-3 rounded-full hover:bg-[#D4AF37] hover:text-white transition-all"
+            className="border-2 border-[#C9A66B] text-[#C9A66B] px-8 py-3 rounded-full hover:bg-[#C9A66B] hover:text-[#0D1421] transition-all"
           >
             더 많은 이야기 보기
           </motion.button>

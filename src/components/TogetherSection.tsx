@@ -35,7 +35,7 @@ export function TogetherSection() {
   ];
   
   return (
-    <section id="together" ref={ref} className="py-24 px-6 bg-[#FAFAFA]">
+    <section id="together" ref={ref} className="py-24 px-6 bg-[#141C2E]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -43,7 +43,7 @@ export function TogetherSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-light text-[#141C2E] mb-4" style={{ fontFamily: 'Pretendard, sans-serif' }}>
+          <h2 className="text-3xl md:text-4xl font-light text-[#F5F1E6] mb-4" style={{ fontFamily: 'Pretendard, sans-serif' }}>
             함께하는 방식
           </h2>
           <p className="text-lg text-[#C9A66B] font-light" style={{ fontFamily: 'Pretendard, sans-serif' }}>
@@ -58,7 +58,7 @@ export function TogetherSection() {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-[#1A2538] rounded-2xl overflow-hidden border border-[#C9A66B]/20 hover:border-[#C9A66B]/40 transition-all duration-300"
             >
               <div className="relative h-64">
                 <img 
@@ -66,18 +66,18 @@ export function TogetherSection() {
                   alt={approach.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0D1421]/80 to-transparent" />
                 <div className="absolute top-6 left-6">
-                  <span className="bg-[#C9A66B] text-[#141C2E] px-3 py-1 rounded-full text-sm font-light">
+                  <span className="bg-[#C9A66B] text-[#0D1421] px-3 py-1 rounded-full text-sm font-light">
                     {approach.feature}
                   </span>
                 </div>
               </div>
               <div className="p-8">
-                <h3 className="text-xl font-semibold text-[#141C2E] mb-3" style={{ fontFamily: 'Pretendard, sans-serif' }}>
+                <h3 className="text-xl font-semibold text-[#F5F1E6] mb-3" style={{ fontFamily: 'Pretendard, sans-serif' }}>
                   {approach.title}
                 </h3>
-                <p className="text-[#C9A66B] leading-relaxed font-light" style={{ fontFamily: 'Pretendard, sans-serif' }}>
+                <p className="text-[#C9A66B]/80 leading-relaxed font-light" style={{ fontFamily: 'Pretendard, sans-serif' }}>
                   {approach.description}
                 </p>
               </div>
@@ -95,7 +95,7 @@ export function TogetherSection() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-[#C9A66B] text-[#141C2E] px-8 py-3 rounded-full hover:opacity-90 transition-all font-light"
+            className="bg-[#C9A66B] text-[#0D1421] px-8 py-3 rounded-full hover:opacity-90 transition-all font-light"
             style={{ fontFamily: 'Pretendard, sans-serif' }}
           >
             전체 상품 비교하기
@@ -105,7 +105,7 @@ export function TogetherSection() {
             <motion.a
               href="#"
               whileHover={{ scale: 1.05 }}
-              className="text-[#C9A66B] hover:text-[#141C2E] transition-colors font-light underline"
+              className="text-[#C9A66B] hover:text-[#F5F1E6] transition-colors font-light underline"
               style={{ fontFamily: 'Pretendard, sans-serif' }}
             >
               미국식 장례 알아보기 &gt;

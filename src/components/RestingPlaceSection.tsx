@@ -31,7 +31,7 @@ export function RestingPlaceSection() {
   ];
   
   return (
-    <section id="space" ref={ref} className="py-24 px-6 bg-[#FAFAFA]">
+    <section id="space" ref={ref} className="py-24 px-6 bg-[#141C2E]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -39,7 +39,7 @@ export function RestingPlaceSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-light text-[#141C2E] mb-4" style={{ fontFamily: 'Pretendard, sans-serif' }}>
+          <h2 className="text-3xl md:text-4xl font-light text-[#F5F1E6] mb-4" style={{ fontFamily: 'Pretendard, sans-serif' }}>
             마지막 안식처
           </h2>
           <p className="text-lg text-[#C9A66B] font-light" style={{ fontFamily: 'Pretendard, sans-serif' }}>
@@ -54,7 +54,7 @@ export function RestingPlaceSection() {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-[#1A2538] rounded-2xl overflow-hidden border border-[#C9A66B]/20 hover:border-[#C9A66B]/40 transition-all duration-300"
             >
               <div className="relative h-64">
                 <img 
@@ -62,13 +62,13 @@ export function RestingPlaceSection() {
                   alt={place.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0D1421]/80 to-transparent" />
               </div>
               <div className="p-8">
-                <h3 className="text-xl font-semibold text-[#141C2E] mb-3" style={{ fontFamily: 'Pretendard, sans-serif' }}>
+                <h3 className="text-xl font-semibold text-[#F5F1E6] mb-3" style={{ fontFamily: 'Pretendard, sans-serif' }}>
                   {place.title}
                 </h3>
-                <p className="text-[#C9A66B] leading-relaxed font-light" style={{ fontFamily: 'Pretendard, sans-serif' }}>
+                <p className="text-[#C9A66B]/80 leading-relaxed font-light" style={{ fontFamily: 'Pretendard, sans-serif' }}>
                   {place.description}
                 </p>
               </div>

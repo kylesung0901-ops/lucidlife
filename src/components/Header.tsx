@@ -20,7 +20,7 @@ export function Header() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200"
+      className="fixed top-0 left-0 right-0 z-50 bg-[#0D1421]/95 backdrop-blur-md border-b border-[#C9A66B]/20"
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
@@ -62,7 +62,7 @@ export function Header() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="hidden lg:block text-[#141C2E] text-sm font-light"
+              className="hidden lg:block text-[#C9A66B] text-sm font-light"
             >
               긴급상담 010-2116-4114
             </motion.div>
@@ -104,7 +104,7 @@ export function Header() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 text-[#141C2E] hover:text-[#C9A66B] transition-colors"
+              className="p-2 text-[#F5F1E6] hover:text-[#C9A66B] transition-colors"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </motion.button>
@@ -117,7 +117,7 @@ export function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="pt-6 pb-4"
+            className="pt-6 pb-4 border-t border-[#C9A66B]/20"
           >
             <div className="flex flex-col gap-4">
               {navItems.map((item) => (
@@ -125,7 +125,7 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="py-2 text-[#141C2E] hover:text-[#C9A66B] transition-colors"
+                  className="py-2 text-[#F5F1E6] hover:text-[#C9A66B] transition-colors"
                 >
                   {item.label}
                 </a>
@@ -134,12 +134,12 @@ export function Header() {
               <div className="flex flex-col gap-3 mt-4">
                 <a
                   href="tel:010-2116-4114"
-                  className="bg-[#C9A66B] text-[#141C2E] px-6 py-3 rounded-full flex items-center justify-center gap-2 hover:opacity-90 transition-all"
+                  className="bg-[#C9A66B] text-[#0D1421] px-6 py-3 rounded-full flex items-center justify-center gap-2 hover:opacity-90 transition-all"
                 >
                   <Phone size={18} />
                   24시간장례상담
                 </a>
-                <button className="bg-[#C9A66B] text-[#141C2E] px-6 py-3 rounded-full hover:opacity-90 transition-all">
+                <button className="bg-[#C9A66B] text-[#0D1421] px-6 py-3 rounded-full hover:opacity-90 transition-all">
                   루시드 함께하기
                 </button>
               </div>
