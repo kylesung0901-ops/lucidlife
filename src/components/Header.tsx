@@ -45,8 +45,13 @@ export function Header() {
             <img 
               src="/lucidlife-logo.png" 
               alt="LucidLife Logo" 
-              className="h-16 sm:h-20 md:h-24 w-auto object-contain"
-              style={{ minHeight: '64px', maxHeight: '96px' }}
+              className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto object-contain"
+              style={{ 
+                minHeight: '80px', 
+                maxHeight: '128px',
+                width: 'auto',
+                objectFit: 'contain'
+              }}
             />
           </motion.a>
           
